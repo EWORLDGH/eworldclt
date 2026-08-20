@@ -6,6 +6,7 @@ export function Footer() {
   return (
     <footer className="border-t border-border/60 bg-card/40">
       <div className="mx-auto grid max-w-7xl gap-10 px-5 py-14 md:grid-cols-3">
+
         <div>
           <h2 className="font-display text-lg font-semibold">Get in touch</h2>
           <ul className="mt-4 space-y-3 text-sm text-muted-foreground">
@@ -51,47 +52,47 @@ export function Footer() {
         <div>
           <h2 className="font-display text-lg font-semibold">Services</h2>
           <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
-            <li>
-              <Link to="/services" className="hover:text-foreground">
-                Website design & development
-              </Link>
-            </li>
-            <li>
-              <Link to="/hosting" className="hover:text-foreground">
-                Web, cloud & VPS hosting
-              </Link>
-            </li>
-            <li>
-              <Link to="/digital-marketing" className="hover:text-foreground">
-                SEO & digital marketing
-              </Link>
-            </li>
-            <li>
-              <Link to="/ai-solutions" className="hover:text-foreground">
-                AI automation & chatbots
-              </Link>
-            </li>
-            <li>
-              <Link to="/about" className="hover:text-foreground">
-                About Eworld
-              </Link>
-            </li>
-            <li>
-              <Link to="/contact" className="hover:text-foreground">
-                Contact us
-              </Link>
-            </li>
+            {[
+              { to: "/services", label: "Website design & development" },
+              { to: "/hosting", label: "Web, cloud & VPS hosting" },
+              { to: "/digital-marketing", label: "SEO & digital marketing" },
+              { to: "/ai-solutions", label: "AI automation & chatbots" },
+            ].map((l) => (
+              <li key={l.to}>
+                <Link to={l.to} className="hover:text-foreground">
+                  {l.label}
+                </Link>
+              </li>
+            ))}
           </ul>
         </div>
 
         <div>
-          <h2 className="font-display text-lg font-semibold">Eworld since {site.since}</h2>
-          <p className="mt-4 text-sm text-muted-foreground">
-            Calicut-based website design, hosting and digital marketing company, now building
-            AI-powered websites, assistants and automation for businesses across Kerala, India and
-            the Gulf.
+          <h2 className="font-display text-lg font-semibold">Company</h2>
+          <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
+            {[
+              { to: "/", label: "Home" },
+              { to: "/about", label: "About Eworld" },
+              { to: "/contact", label: "Contact us" },
+            ].map((l) => (
+              <li key={l.to}>
+                <Link to={l.to} className="hover:text-foreground">
+                  {l.label}
+                </Link>
+              </li>
+            ))}
+            <li>
+              <a href="/sitemap.xml" className="hover:text-foreground">
+                Sitemap
+              </a>
+            </li>
+          </ul>
+          <p className="mt-5 text-sm text-muted-foreground">
+            Eworld since {site.since} — Calicut-based website design, hosting, digital marketing and
+            AI solutions for businesses across Kerala, India and the Gulf.
           </p>
         </div>
+
       </div>
       <div className="border-t border-border/60 px-5 py-6 text-center text-xs text-muted-foreground">
         &copy; {new Date().getFullYear()} {site.name}. All rights reserved.

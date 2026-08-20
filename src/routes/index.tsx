@@ -87,42 +87,47 @@ function Home() {
     <div className="min-h-screen">
       <Header />
       <main>
-        <section className="relative overflow-hidden">
-          <img
-            src={heroImage}
-            alt="Data centre servers connected to an AI neural network"
-            width={1920}
-            height={1088}
-            className="absolute inset-0 size-full object-cover opacity-40"
-          />
-          <div className="absolute inset-0 bg-hero-veil" />
-          <div className="relative mx-auto max-w-7xl px-5 py-28 sm:py-36">
-            <span className="inline-flex items-center gap-2 rounded-full border border-primary/40 bg-primary/10 px-4 py-1.5 text-xs font-medium text-primary">
-              <Sparkles className="size-3.5" /> Since {site.since} · Now AI-powered
-            </span>
-            <h1 className="mt-6 max-w-3xl font-display text-4xl font-bold leading-[1.08] tracking-tight sm:text-6xl">
-              Websites, hosting and marketing — rebuilt with AI at the core.
-            </h1>
-            <p className="mt-6 max-w-2xl text-lg text-muted-foreground">
-              Eworld Information Systems has been Calicut&rsquo;s web design and hosting partner for
-              over two decades. Today we add AI assistants, automation and AI-search visibility to
-              everything we build.
-            </p>
-            <div className="mt-9 flex flex-wrap gap-3">
-              <Link
-                to="/contact"
-                className="inline-flex items-center gap-2 rounded-full bg-gradient-brand px-6 py-3 text-sm font-medium text-primary-foreground shadow-glow transition-transform hover:scale-[1.03]"
-              >
-                Start your project <ArrowRight className="size-4" />
-              </Link>
-              <Link
-                to="/ai-solutions"
-                className="inline-flex items-center gap-2 rounded-full border border-border px-6 py-3 text-sm font-medium transition-colors hover:border-primary/60"
-              >
-                Explore AI services
-              </Link>
+        <section className="border-b border-border/60 bg-grid">
+          <div className="mx-auto grid max-w-7xl items-center gap-12 px-5 py-16 lg:grid-cols-[1.1fr_1fr] lg:py-24">
+            <div>
+              <span className="inline-flex items-center gap-2 rounded-full border border-primary/40 bg-primary/10 px-4 py-1.5 text-xs font-medium text-primary">
+                <Sparkles className="size-3.5" /> Since {site.since} · Now AI-powered
+              </span>
+              <h1 className="mt-6 font-display text-4xl font-bold leading-[1.08] tracking-tight sm:text-5xl">
+                Websites, hosting and marketing — rebuilt with AI at the core.
+              </h1>
+              <p className="mt-6 max-w-xl text-lg text-muted-foreground">
+                Eworld Information Systems has been Calicut&rsquo;s web design and hosting partner
+                for over two decades. Today we add AI assistants, automation and AI-search
+                visibility to everything we build.
+              </p>
+              <div className="mt-8 flex flex-wrap gap-3">
+                <Link
+                  to="/contact"
+                  className="inline-flex items-center gap-2 rounded-full bg-gradient-brand px-6 py-3 text-sm font-medium text-primary-foreground shadow-glow transition-transform hover:scale-[1.03]"
+                >
+                  Start your project <ArrowRight className="size-4" />
+                </Link>
+                <Link
+                  to="/ai-solutions"
+                  className="inline-flex items-center gap-2 rounded-full border border-border px-6 py-3 text-sm font-medium transition-colors hover:border-primary/60"
+                >
+                  Explore AI services
+                </Link>
+              </div>
             </div>
-            <dl className="mt-16 grid max-w-3xl grid-cols-2 gap-8 sm:grid-cols-4">
+            <div className="overflow-hidden rounded-3xl border border-border/60 bg-card">
+              <img
+                src={heroImage}
+                alt="AI-connected servers powering modern websites"
+                width={1920}
+                height={1088}
+                className="h-full w-full object-cover"
+              />
+            </div>
+          </div>
+          <div className="mx-auto max-w-7xl px-5 pb-14">
+            <dl className="grid grid-cols-2 gap-8 border-t border-border/60 pt-10 sm:grid-cols-4">
               {[
                 ["25+", "Years in business"],
                 ["1500+", "Websites delivered"],
@@ -151,18 +156,30 @@ function Home() {
               <Link
                 key={s.title}
                 to={s.to}
-                className="group rounded-2xl border border-border/60 bg-card p-6 transition-colors hover:border-primary/60"
+                className="group overflow-hidden rounded-2xl border border-border/60 bg-card transition-colors hover:border-primary/60"
               >
-                <s.icon className="size-6 text-primary" />
-                <h3 className="mt-4 font-display text-lg font-semibold">{s.title}</h3>
-                <p className="mt-2 text-sm text-muted-foreground">{s.body}</p>
-                <span className="mt-4 inline-flex items-center gap-1 text-sm text-primary opacity-0 transition-opacity group-hover:opacity-100">
-                  Learn more <ArrowRight className="size-3.5" />
-                </span>
+                <img
+                  src={s.image}
+                  alt={s.title}
+                  loading="lazy"
+                  width={1280}
+                  height={800}
+                  className="h-40 w-full object-cover"
+                />
+                <div className="p-6">
+                  <s.icon className="size-6 text-primary" />
+                  <h3 className="mt-4 font-display text-lg font-semibold">{s.title}</h3>
+                  <p className="mt-2 text-sm text-muted-foreground">{s.body}</p>
+                  <span className="mt-4 inline-flex items-center gap-1 text-sm text-primary">
+                    Learn more{" "}
+                    <ArrowRight className="size-3.5 transition-transform group-hover:translate-x-1" />
+                  </span>
+                </div>
               </Link>
             ))}
           </div>
         </section>
+
 
         <section className="border-y border-border/60 bg-card/40">
           <div className="mx-auto grid max-w-7xl gap-10 px-5 py-20 lg:grid-cols-2">

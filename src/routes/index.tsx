@@ -1,6 +1,11 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, Bot, Globe, Server, TrendingUp, ShieldCheck, Sparkles } from "lucide-react";
 import heroImage from "@/assets/hero.jpg";
+import webDesignImage from "@/assets/web-design.jpg";
+import hostingImage from "@/assets/hosting.jpg";
+import marketingImage from "@/assets/marketing.jpg";
+import aiImage from "@/assets/ai.jpg";
+
 import { Header } from "@/components/site/Header";
 import { Footer } from "@/components/site/Footer";
 import { CtaBand } from "@/components/site/Section";
@@ -61,26 +66,31 @@ const services = [
     title: "Website Design & Development",
     body: "Responsive, fast, SEO-ready corporate, e-commerce and web application builds.",
     to: "/services" as const,
+    image: webDesignImage,
   },
   {
     icon: Server,
     title: "Hosting, Domains & Servers",
     body: "Linux & Windows shared hosting, VPS, cloud, dedicated and business email.",
     to: "/hosting" as const,
+    image: hostingImage,
   },
   {
     icon: TrendingUp,
     title: "SEO & Digital Marketing",
     body: "Search, social, Google Ads and content that brings measurable enquiries.",
     to: "/digital-marketing" as const,
+    image: marketingImage,
   },
   {
     icon: Bot,
     title: "AI Integration",
     body: "AI chatbots, lead qualification, content engines and workflow automation.",
     to: "/ai-solutions" as const,
+    image: aiImage,
   },
 ];
+
 
 function Home() {
   return (

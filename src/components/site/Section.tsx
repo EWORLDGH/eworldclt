@@ -1,3 +1,4 @@
+import { Link } from "@tanstack/react-router";
 import type { ReactNode } from "react";
 
 export function PageHero({
@@ -61,12 +62,12 @@ export function CtaBand() {
           Talk to our Calicut team about design, hosting, SEO and AI integration — one partner for
           your whole digital presence.
         </p>
-        <a
-          href="/contact"
+        <Link
+          to="/contact"
           className="rounded-full bg-gradient-brand px-6 py-3 text-sm font-medium text-primary-foreground shadow-glow"
         >
           Get a free consultation
-        </a>
+        </Link>
       </div>
     </section>
   );

@@ -1,7 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { useState } from "react";
 import { Menu, X, Phone } from "lucide-react";
-import logoAsset from "@/assets/eworld-logo.png.asset.json";
+import logoAsset from "@/assets/eworld-logo-dark.png.asset.json";
 import { site, telHref } from "@/lib/site";
 
 
@@ -22,13 +22,13 @@ export function Header() {
     <header className="sticky top-0 z-50 border-b border-border/60 bg-background/80 backdrop-blur-xl">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4">
         <Link to="/" className="flex items-center gap-2" aria-label="Eworld Information Systems — home">
-          <span className="rounded-xl bg-brand-plate px-2.5 py-1.5 ring-1 ring-border/60 transition-transform hover:scale-[1.03]">
+          <span className="inline-block transition-transform hover:scale-[1.03]">
             <img
               src={logoAsset.url}
               alt="Eworld Information Systems logo"
               width={301}
               height={78}
-              className="h-8 w-auto"
+              className="h-9 w-auto"
             />
           </span>
         </Link>

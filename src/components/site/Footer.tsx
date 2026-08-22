@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { MapPin, Phone, Mail, MessageCircle } from "lucide-react";
-import logoAsset from "@/assets/eworld-logo.png.asset.json";
+import logoAsset from "@/assets/eworld-logo-dark.png.asset.json";
 import { site, telHref } from "@/lib/site";
 
 
@@ -10,14 +10,14 @@ export function Footer() {
       <div className="mx-auto grid max-w-7xl gap-10 px-5 py-14 md:grid-cols-3">
 
         <div>
-          <span className="inline-block rounded-xl bg-brand-plate px-2.5 py-1.5 ring-1 ring-border/60">
+          <span className="inline-block">
             <img
               src={logoAsset.url}
               alt="Eworld Information Systems logo"
               loading="lazy"
               width={301}
               height={78}
-              className="h-8 w-auto"
+              className="h-9 w-auto"
             />
           </span>
           <h2 className="mt-5 font-display text-lg font-semibold">Get in touch</h2>

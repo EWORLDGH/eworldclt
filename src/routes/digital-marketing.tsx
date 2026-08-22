@@ -1,7 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
+import pageImage from "@/assets/marketing.jpg";
 import { Header } from "@/components/site/Header";
 import { Footer } from "@/components/site/Footer";
-import { PageHero, Cards, CtaBand } from "@/components/site/Section";
+import { PageHero, Cards, CtaBand, RelatedLinks } from "@/components/site/Section";
 
 const title = "SEO & Digital Marketing Company in Calicut, Kerala | Eworld";
 const description =
@@ -60,12 +61,13 @@ function Marketing() {
     <div className="min-h-screen">
       <Header />
       <main>
-        <PageHero eyebrow="Digital Marketing" title="Be found on Google — and inside AI answers">
+        <PageHero eyebrow="Digital Marketing" title="Be found on Google — and inside AI answers" image={pageImage} imageAlt="Marketing analytics dashboard">
           Search behaviour is shifting from links to answers. We optimise for both, so enquiries keep
           coming from every channel your customers use.
         </PageHero>
         <Cards items={items} />
         <CtaBand />
+        <RelatedLinks current="/digital-marketing" />
       </main>
       <Footer />
     </div>

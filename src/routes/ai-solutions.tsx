@@ -1,7 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
+import pageImage from "@/assets/ai.jpg";
 import { Header } from "@/components/site/Header";
 import { Footer } from "@/components/site/Footer";
-import { PageHero, Cards, CtaBand } from "@/components/site/Section";
+import { PageHero, Cards, CtaBand, RelatedLinks } from "@/components/site/Section";
 
 const title = "AI Integration, Chatbots & Automation Services | Eworld Calicut";
 const description =
@@ -60,12 +61,13 @@ function AiSolutions() {
     <div className="min-h-screen">
       <Header />
       <main>
-        <PageHero eyebrow="AI Integration" title="AI that answers customers and cuts busywork">
+        <PageHero eyebrow="AI Integration" title="AI that answers customers and cuts busywork" image={pageImage} imageAlt="AI chat assistant icon">
           We add AI to real business processes — support, sales, content and back office — with clear
           scope, sensible costs and full data control.
         </PageHero>
         <Cards items={items} />
         <CtaBand />
+        <RelatedLinks current="/ai-solutions" />
       </main>
       <Footer />
     </div>

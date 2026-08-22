@@ -1,7 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
+import pageImage from "@/assets/web-design.jpg";
 import { Header } from "@/components/site/Header";
 import { Footer } from "@/components/site/Footer";
-import { PageHero, Cards, CtaBand } from "@/components/site/Section";
+import { PageHero, Cards, CtaBand, RelatedLinks } from "@/components/site/Section";
 
 const title = "Website Design & Development Company in Calicut | Eworld";
 const description =
@@ -60,12 +61,13 @@ function Services() {
     <div className="min-h-screen">
       <Header />
       <main>
-        <PageHero eyebrow="Design & Development" title="Websites built to perform, not just look good">
+        <PageHero eyebrow="Design & Development" title="Websites built to perform, not just look good" image={pageImage} imageAlt="Website design work on a laptop">
           From a five-page brochure site to a full e-commerce platform, we design, build and maintain
           it in-house — with AI features available from day one.
         </PageHero>
         <Cards items={items} />
         <CtaBand />
+        <RelatedLinks current="/services" />
       </main>
       <Footer />
     </div>

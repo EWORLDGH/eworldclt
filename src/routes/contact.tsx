@@ -1,8 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Mail, MapPin, MessageCircle, Phone } from "lucide-react";
+import pageImage from "@/assets/web-design.jpg";
 import { Header } from "@/components/site/Header";
 import { Footer } from "@/components/site/Footer";
-import { PageHero } from "@/components/site/Section";
+import { PageHero, RelatedLinks } from "@/components/site/Section";
 import { site, telHref } from "@/lib/site";
 
 const title = "Contact Eworld — Website Design & Hosting, Mavoor Road, Calicut";
@@ -29,7 +30,7 @@ function Contact() {
     <div className="min-h-screen">
       <Header />
       <main>
-        <PageHero eyebrow="Contact" title="Talk to the Eworld team in Calicut">
+        <PageHero eyebrow="Contact" title="Talk to the Eworld team in Calicut" image={pageImage} imageAlt="Eworld office desk setup">
           Tell us what you need — a new website, hosting migration, SEO help or an AI assistant. We
           reply the same working day.
         </PageHero>
@@ -145,6 +146,7 @@ function Contact() {
             </form>
           </div>
         </section>
+        <RelatedLinks current="/contact" />
       </main>
       <Footer />
     </div>

@@ -1,7 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
+import pageImage from "@/assets/hosting.jpg";
 import { Header } from "@/components/site/Header";
 import { Footer } from "@/components/site/Footer";
-import { PageHero, Cards, CtaBand } from "@/components/site/Section";
+import { PageHero, Cards, CtaBand, RelatedLinks } from "@/components/site/Section";
 
 const title = "Web Hosting, VPS & Domain Registration in Calicut | Eworld";
 const description =
@@ -60,12 +61,13 @@ function Hosting() {
     <div className="min-h-screen">
       <Header />
       <main>
-        <PageHero eyebrow="Hosting & Infrastructure" title="Hosting you can call someone about">
+        <PageHero eyebrow="Hosting & Infrastructure" title="Hosting you can call someone about" image={pageImage} imageAlt="Server racks in a data centre">
           Secure, affordable and monitored hosting backed by local, responsive support — the same
           service that has kept Kerala businesses online since 2001.
         </PageHero>
         <Cards items={items} />
         <CtaBand />
+        <RelatedLinks current="/hosting" />
       </main>
       <Footer />
     </div>

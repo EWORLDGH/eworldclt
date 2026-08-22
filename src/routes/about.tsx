@@ -1,7 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
+import pageImage from "@/assets/team.jpg";
 import { Header } from "@/components/site/Header";
 import { Footer } from "@/components/site/Footer";
-import { PageHero, CtaBand } from "@/components/site/Section";
+import { PageHero, CtaBand, RelatedLinks } from "@/components/site/Section";
 import { site } from "@/lib/site";
 
 const title = "About Eworld Information Systems, Calicut — Since 2001";
@@ -36,7 +37,7 @@ function About() {
     <div className="min-h-screen">
       <Header />
       <main>
-        <PageHero eyebrow="About us" title="A quarter century of Kerala's web, now AI-first">
+        <PageHero eyebrow="About us" title="A quarter century of Kerala's web, now AI-first" image={pageImage} imageAlt="Eworld team at work in the Calicut office">
           {site.name} works from Mavoor Road, Calicut, serving businesses across Kerala, India and the
           Gulf with design, hosting, marketing and AI under one roof.
         </PageHero>
@@ -70,6 +71,7 @@ function About() {
         </section>
 
         <CtaBand />
+        <RelatedLinks current="/about" />
       </main>
       <Footer />
     </div>

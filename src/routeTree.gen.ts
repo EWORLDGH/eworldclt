@@ -12,11 +12,19 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as AiSolutionsRouteImport } from './routes/ai-solutions'
+import { Route as CloudHostingRouteImport } from './routes/cloud-hosting'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as DigitalMarketingRouteImport } from './routes/digital-marketing'
 import { Route as HostingRouteImport } from './routes/hosting'
+import { Route as LinuxResellerHostingRouteImport } from './routes/linux-reseller-hosting'
+import { Route as MicrosoftMailRouteImport } from './routes/microsoft-mail'
 import { Route as ServicesRouteImport } from './routes/services'
+import { Route as SiteLockRouteImport } from './routes/site-lock'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
+import { Route as SslCertificateRouteImport } from './routes/ssl-certificate'
+import { Route as WebsiteBackupRouteImport } from './routes/website-backup'
+import { Route as WindowsResellerHostingRouteImport } from './routes/windows-reseller-hosting'
+import { Route as ZohoMailRouteImport } from './routes/zoho-mail'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -31,6 +39,11 @@ const AboutRoute = AboutRouteImport.update({
 const AiSolutionsRoute = AiSolutionsRouteImport.update({
   id: '/ai-solutions',
   path: '/ai-solutions',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CloudHostingRoute = CloudHostingRouteImport.update({
+  id: '/cloud-hosting',
+  path: '/cloud-hosting',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ContactRoute = ContactRouteImport.update({
@@ -48,9 +61,24 @@ const HostingRoute = HostingRouteImport.update({
   path: '/hosting',
   getParentRoute: () => rootRouteImport,
 } as any)
+const LinuxResellerHostingRoute = LinuxResellerHostingRouteImport.update({
+  id: '/linux-reseller-hosting',
+  path: '/linux-reseller-hosting',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MicrosoftMailRoute = MicrosoftMailRouteImport.update({
+  id: '/microsoft-mail',
+  path: '/microsoft-mail',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ServicesRoute = ServicesRouteImport.update({
   id: '/services',
   path: '/services',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SiteLockRoute = SiteLockRouteImport.update({
+  id: '/site-lock',
+  path: '/site-lock',
   getParentRoute: () => rootRouteImport,
 } as any)
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
@@ -58,37 +86,81 @@ const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   path: '/sitemap.xml',
   getParentRoute: () => rootRouteImport,
 } as any)
+const SslCertificateRoute = SslCertificateRouteImport.update({
+  id: '/ssl-certificate',
+  path: '/ssl-certificate',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const WebsiteBackupRoute = WebsiteBackupRouteImport.update({
+  id: '/website-backup',
+  path: '/website-backup',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const WindowsResellerHostingRoute = WindowsResellerHostingRouteImport.update({
+  id: '/windows-reseller-hosting',
+  path: '/windows-reseller-hosting',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ZohoMailRoute = ZohoMailRouteImport.update({
+  id: '/zoho-mail',
+  path: '/zoho-mail',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/ai-solutions': typeof AiSolutionsRoute
+  '/cloud-hosting': typeof CloudHostingRoute
   '/contact': typeof ContactRoute
   '/digital-marketing': typeof DigitalMarketingRoute
   '/hosting': typeof HostingRoute
+  '/linux-reseller-hosting': typeof LinuxResellerHostingRoute
+  '/microsoft-mail': typeof MicrosoftMailRoute
   '/services': typeof ServicesRoute
+  '/site-lock': typeof SiteLockRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/ssl-certificate': typeof SslCertificateRoute
+  '/website-backup': typeof WebsiteBackupRoute
+  '/windows-reseller-hosting': typeof WindowsResellerHostingRoute
+  '/zoho-mail': typeof ZohoMailRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/ai-solutions': typeof AiSolutionsRoute
+  '/cloud-hosting': typeof CloudHostingRoute
   '/contact': typeof ContactRoute
   '/digital-marketing': typeof DigitalMarketingRoute
   '/hosting': typeof HostingRoute
+  '/linux-reseller-hosting': typeof LinuxResellerHostingRoute
+  '/microsoft-mail': typeof MicrosoftMailRoute
   '/services': typeof ServicesRoute
+  '/site-lock': typeof SiteLockRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/ssl-certificate': typeof SslCertificateRoute
+  '/website-backup': typeof WebsiteBackupRoute
+  '/windows-reseller-hosting': typeof WindowsResellerHostingRoute
+  '/zoho-mail': typeof ZohoMailRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/ai-solutions': typeof AiSolutionsRoute
+  '/cloud-hosting': typeof CloudHostingRoute
   '/contact': typeof ContactRoute
   '/digital-marketing': typeof DigitalMarketingRoute
   '/hosting': typeof HostingRoute
+  '/linux-reseller-hosting': typeof LinuxResellerHostingRoute
+  '/microsoft-mail': typeof MicrosoftMailRoute
   '/services': typeof ServicesRoute
+  '/site-lock': typeof SiteLockRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/ssl-certificate': typeof SslCertificateRoute
+  '/website-backup': typeof WebsiteBackupRoute
+  '/windows-reseller-hosting': typeof WindowsResellerHostingRoute
+  '/zoho-mail': typeof ZohoMailRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -96,42 +168,74 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/ai-solutions'
+    | '/cloud-hosting'
     | '/contact'
     | '/digital-marketing'
     | '/hosting'
+    | '/linux-reseller-hosting'
+    | '/microsoft-mail'
     | '/services'
+    | '/site-lock'
     | '/sitemap.xml'
+    | '/ssl-certificate'
+    | '/website-backup'
+    | '/windows-reseller-hosting'
+    | '/zoho-mail'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/about'
     | '/ai-solutions'
+    | '/cloud-hosting'
     | '/contact'
     | '/digital-marketing'
     | '/hosting'
+    | '/linux-reseller-hosting'
+    | '/microsoft-mail'
     | '/services'
+    | '/site-lock'
     | '/sitemap.xml'
+    | '/ssl-certificate'
+    | '/website-backup'
+    | '/windows-reseller-hosting'
+    | '/zoho-mail'
   id:
     | '__root__'
     | '/'
     | '/about'
     | '/ai-solutions'
+    | '/cloud-hosting'
     | '/contact'
     | '/digital-marketing'
     | '/hosting'
+    | '/linux-reseller-hosting'
+    | '/microsoft-mail'
     | '/services'
+    | '/site-lock'
     | '/sitemap.xml'
+    | '/ssl-certificate'
+    | '/website-backup'
+    | '/windows-reseller-hosting'
+    | '/zoho-mail'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
   AiSolutionsRoute: typeof AiSolutionsRoute
+  CloudHostingRoute: typeof CloudHostingRoute
   ContactRoute: typeof ContactRoute
   DigitalMarketingRoute: typeof DigitalMarketingRoute
   HostingRoute: typeof HostingRoute
+  LinuxResellerHostingRoute: typeof LinuxResellerHostingRoute
+  MicrosoftMailRoute: typeof MicrosoftMailRoute
   ServicesRoute: typeof ServicesRoute
+  SiteLockRoute: typeof SiteLockRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
+  SslCertificateRoute: typeof SslCertificateRoute
+  WebsiteBackupRoute: typeof WebsiteBackupRoute
+  WindowsResellerHostingRoute: typeof WindowsResellerHostingRoute
+  ZohoMailRoute: typeof ZohoMailRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -157,6 +261,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AiSolutionsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/cloud-hosting': {
+      id: '/cloud-hosting'
+      path: '/cloud-hosting'
+      fullPath: '/cloud-hosting'
+      preLoaderRoute: typeof CloudHostingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/contact': {
       id: '/contact'
       path: '/contact'
@@ -178,11 +289,32 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof HostingRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/linux-reseller-hosting': {
+      id: '/linux-reseller-hosting'
+      path: '/linux-reseller-hosting'
+      fullPath: '/linux-reseller-hosting'
+      preLoaderRoute: typeof LinuxResellerHostingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/microsoft-mail': {
+      id: '/microsoft-mail'
+      path: '/microsoft-mail'
+      fullPath: '/microsoft-mail'
+      preLoaderRoute: typeof MicrosoftMailRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/services': {
       id: '/services'
       path: '/services'
       fullPath: '/services'
       preLoaderRoute: typeof ServicesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/site-lock': {
+      id: '/site-lock'
+      path: '/site-lock'
+      fullPath: '/site-lock'
+      preLoaderRoute: typeof SiteLockRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/sitemap.xml': {
@@ -192,6 +324,34 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SitemapDotxmlRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/ssl-certificate': {
+      id: '/ssl-certificate'
+      path: '/ssl-certificate'
+      fullPath: '/ssl-certificate'
+      preLoaderRoute: typeof SslCertificateRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/website-backup': {
+      id: '/website-backup'
+      path: '/website-backup'
+      fullPath: '/website-backup'
+      preLoaderRoute: typeof WebsiteBackupRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/windows-reseller-hosting': {
+      id: '/windows-reseller-hosting'
+      path: '/windows-reseller-hosting'
+      fullPath: '/windows-reseller-hosting'
+      preLoaderRoute: typeof WindowsResellerHostingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/zoho-mail': {
+      id: '/zoho-mail'
+      path: '/zoho-mail'
+      fullPath: '/zoho-mail'
+      preLoaderRoute: typeof ZohoMailRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -199,11 +359,19 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
   AiSolutionsRoute: AiSolutionsRoute,
+  CloudHostingRoute: CloudHostingRoute,
   ContactRoute: ContactRoute,
   DigitalMarketingRoute: DigitalMarketingRoute,
   HostingRoute: HostingRoute,
+  LinuxResellerHostingRoute: LinuxResellerHostingRoute,
+  MicrosoftMailRoute: MicrosoftMailRoute,
   ServicesRoute: ServicesRoute,
+  SiteLockRoute: SiteLockRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
+  SslCertificateRoute: SslCertificateRoute,
+  WebsiteBackupRoute: WebsiteBackupRoute,
+  WindowsResellerHostingRoute: WindowsResellerHostingRoute,
+  ZohoMailRoute: ZohoMailRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

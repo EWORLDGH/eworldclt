@@ -91,6 +91,14 @@ export function Cards({
 const allLinks = [
   { to: "/services", label: "Website design & development" },
   { to: "/hosting", label: "Hosting, domains & servers" },
+  { to: "/cloud-hosting", label: "Cloud hosting" },
+  { to: "/linux-reseller-hosting", label: "Linux reseller hosting" },
+  { to: "/windows-reseller-hosting", label: "Windows reseller hosting" },
+  { to: "/microsoft-mail", label: "Microsoft Mail" },
+  { to: "/zoho-mail", label: "Zoho Mail" },
+  { to: "/ssl-certificate", label: "SSL certificates" },
+  { to: "/site-lock", label: "SiteLock website security" },
+  { to: "/website-backup", label: "Website backup" },
   { to: "/digital-marketing", label: "SEO & digital marketing" },
   { to: "/ai-solutions", label: "AI integration & automation" },
   { to: "/about", label: "About Eworld" },
@@ -104,6 +112,7 @@ export function RelatedLinks({ current }: { current?: string }) {
       <div className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
         {allLinks
           .filter((l) => l.to !== current)
+          .slice(0, 6)
           .map((l) => (
             <Link
               key={l.to}

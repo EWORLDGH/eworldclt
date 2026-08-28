@@ -68,6 +68,9 @@ export function Footer() {
             {[
               { to: "/services", label: "Website design & development" },
               { to: "/hosting", label: "Web, cloud & VPS hosting" },
+              { to: "/cloud-hosting", label: "Cloud hosting" },
+              { to: "/linux-reseller-hosting", label: "Linux reseller hosting" },
+              { to: "/windows-reseller-hosting", label: "Windows reseller hosting" },
               { to: "/digital-marketing", label: "SEO & digital marketing" },
               { to: "/ai-solutions", label: "AI automation & chatbots" },
             ].map((l) => (
@@ -79,6 +82,56 @@ export function Footer() {
             ))}
           </ul>
         </div>
+
+        <div>
+          <h2 className="font-display text-lg font-semibold">Domain, Email & Security</h2>
+          <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
+            <li>
+              <a
+                href="https://eworld.supersite2.myorderbox.com/domain-registration/index.php"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-foreground"
+              >
+                Domain registration
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://eworld.supersite2.myorderbox.com/domain-registration/transfer/index.php"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-foreground"
+              >
+                Domain transfer
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://eworld.supersite2.myorderbox.com/business-email"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-foreground"
+              >
+                Business email
+              </a>
+            </li>
+            {[
+              { to: "/microsoft-mail", label: "Microsoft Mail" },
+              { to: "/zoho-mail", label: "Zoho Mail" },
+              { to: "/ssl-certificate", label: "SSL certificates" },
+              { to: "/site-lock", label: "SiteLock security" },
+              { to: "/website-backup", label: "Website backup" },
+            ].map((l) => (
+              <li key={l.to}>
+                <Link to={l.to} className="hover:text-foreground">
+                  {l.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+
 
         <div>
           <h2 className="font-display text-lg font-semibold">Company</h2>

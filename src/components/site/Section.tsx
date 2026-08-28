@@ -112,6 +112,7 @@ export function RelatedLinks({ current }: { current?: string }) {
       <div className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
         {allLinks
           .filter((l) => l.to !== current)
+          .slice(0, 6)
           .map((l) => (
             <Link
               key={l.to}

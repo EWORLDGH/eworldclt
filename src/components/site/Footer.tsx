@@ -7,7 +7,7 @@ import { site, telHref } from "@/lib/site";
 export function Footer() {
   return (
     <footer className="border-t border-border/60 bg-card/40">
-      <div className="mx-auto grid max-w-7xl gap-10 px-5 py-14 md:grid-cols-3">
+      <div className="mx-auto grid max-w-7xl gap-10 px-5 py-14 md:grid-cols-2 lg:grid-cols-4">
 
         <div>
           <span className="inline-block">

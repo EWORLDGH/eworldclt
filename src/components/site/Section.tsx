@@ -16,14 +16,14 @@ export function PageHero({
   children?: ReactNode;
 }) {
   return (
-    <section className="border-b border-border/60 bg-grid">
+    <section className="bg-ink bg-grid-dark text-ink-foreground">
       <div className="mx-auto grid max-w-7xl items-center gap-10 px-5 py-16 lg:grid-cols-2 lg:py-20">
         <div>
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">{eyebrow}</p>
           <h1 className="mt-4 font-display text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl">
             {title}
           </h1>
-          {children ? <p className="mt-5 text-muted-foreground">{children}</p> : null}
+          {children ? <p className="mt-5 text-ink-foreground/70">{children}</p> : null}
           <div className="mt-7 flex flex-wrap gap-3">
             <Link
               to="/contact"
@@ -33,14 +33,14 @@ export function PageHero({
             </Link>
             <Link
               to="/services"
-              className="inline-flex items-center rounded-full border border-border px-5 py-2.5 text-sm font-medium transition-colors hover:border-primary/60"
+              className="inline-flex items-center rounded-full border border-ink-foreground/25 px-5 py-2.5 text-sm font-medium text-ink-foreground transition-colors hover:border-ink-foreground/60"
             >
               All services
             </Link>
           </div>
         </div>
         {image ? (
-          <div className="overflow-hidden rounded-3xl border border-border/60 bg-card">
+          <div className="overflow-hidden rounded-3xl border border-ink-foreground/15">
             <img
               src={image}
               alt={imageAlt ?? title}
@@ -130,12 +130,12 @@ export function RelatedLinks({ current }: { current?: string }) {
 
 export function CtaBand() {
   return (
-    <section className="border-y border-border/60 bg-card/40">
+    <section className="bg-ink bg-grid-dark text-ink-foreground">
       <div className="mx-auto flex max-w-5xl flex-col items-center gap-4 px-5 py-14 text-center">
         <h2 className="font-display text-2xl font-bold sm:text-3xl">
           Ready to modernise your website?
         </h2>
-        <p className="max-w-2xl text-sm text-muted-foreground">
+        <p className="max-w-2xl text-sm text-ink-foreground/70">
           Talk to our Calicut team about design, hosting, SEO and AI integration — one partner for
           your whole digital presence.
         </p>

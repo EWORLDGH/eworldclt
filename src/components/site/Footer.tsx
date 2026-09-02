@@ -1,12 +1,12 @@
 import { Link } from "@tanstack/react-router";
 import { MapPin, Phone, Mail, MessageCircle } from "lucide-react";
-import logoAsset from "@/assets/eworld-logo.png.asset.json";
+import logoAsset from "@/assets/eworld-logo-dark.png.asset.json";
 import { site, telHref } from "@/lib/site";
 
 
 export function Footer() {
   return (
-    <footer className="border-t border-border/60 bg-card/40">
+    <footer className="bg-ink text-ink-foreground">
       <div className="mx-auto grid max-w-7xl gap-10 px-5 py-14 md:grid-cols-2 lg:grid-cols-4">
 
         <div>
@@ -22,7 +22,7 @@ export function Footer() {
           </span>
           <h2 className="mt-5 font-display text-lg font-semibold">Get in touch</h2>
 
-          <ul className="mt-4 space-y-3 text-sm text-muted-foreground">
+          <ul className="mt-4 space-y-3 text-sm text-ink-foreground/70">
             <li className="flex gap-3">
               <MapPin className="mt-0.5 size-4 shrink-0 text-primary" />
               <address className="not-italic">{site.address}</address>
@@ -31,7 +31,7 @@ export function Footer() {
               <Phone className="mt-0.5 size-4 shrink-0 text-primary" />
               <span>
                 {site.phones.map((p) => (
-                  <a key={p} href={telHref(p)} className="mr-2 hover:text-foreground">
+                  <a key={p} href={telHref(p)} className="mr-2 hover:text-ink-foreground">
                     {p}
                   </a>
                 ))}
@@ -43,7 +43,7 @@ export function Footer() {
               <MessageCircle className="mt-0.5 size-4 shrink-0 text-primary" />
               <a
                 href={`https://wa.me/${site.whatsapp.replace("+", "")}`}
-                className="hover:text-foreground"
+                className="hover:text-ink-foreground"
               >
                 WhatsApp {site.emergency[0]}
               </a>
@@ -52,7 +52,7 @@ export function Footer() {
               <Mail className="mt-0.5 size-4 shrink-0 text-primary" />
               <span>
                 {site.emails.map((e) => (
-                  <a key={e} href={`mailto:${e}`} className="block hover:text-foreground">
+                  <a key={e} href={`mailto:${e}`} className="block hover:text-ink-foreground">
                     {e}
                   </a>
                 ))}
@@ -64,7 +64,7 @@ export function Footer() {
 
         <div>
           <h2 className="font-display text-lg font-semibold">Services</h2>
-          <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
+          <ul className="mt-4 space-y-2 text-sm text-ink-foreground/70">
             {[
               { to: "/services", label: "Website design & development" },
               { to: "/hosting", label: "Web, cloud & VPS hosting" },
@@ -75,7 +75,7 @@ export function Footer() {
               { to: "/ai-solutions", label: "AI automation & chatbots" },
             ].map((l) => (
               <li key={l.to}>
-                <Link to={l.to} className="hover:text-foreground">
+                <Link to={l.to} className="hover:text-ink-foreground">
                   {l.label}
                 </Link>
               </li>
@@ -85,13 +85,13 @@ export function Footer() {
 
         <div>
           <h2 className="font-display text-lg font-semibold">Domain, Email & Security</h2>
-          <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
+          <ul className="mt-4 space-y-2 text-sm text-ink-foreground/70">
             <li>
               <a
                 href="https://eworld.supersite2.myorderbox.com/domain-registration/index.php"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:text-foreground"
+                className="hover:text-ink-foreground"
               >
                 Domain registration
               </a>
@@ -101,7 +101,7 @@ export function Footer() {
                 href="https://eworld.supersite2.myorderbox.com/domain-registration/transfer/index.php"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:text-foreground"
+                className="hover:text-ink-foreground"
               >
                 Domain transfer
               </a>
@@ -111,7 +111,7 @@ export function Footer() {
                 href="https://eworld.supersite2.myorderbox.com/business-email"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:text-foreground"
+                className="hover:text-ink-foreground"
               >
                 Business email
               </a>
@@ -124,7 +124,7 @@ export function Footer() {
               { to: "/website-backup", label: "Website backup" },
             ].map((l) => (
               <li key={l.to}>
-                <Link to={l.to} className="hover:text-foreground">
+                <Link to={l.to} className="hover:text-ink-foreground">
                   {l.label}
                 </Link>
               </li>
@@ -135,32 +135,32 @@ export function Footer() {
 
         <div>
           <h2 className="font-display text-lg font-semibold">Company</h2>
-          <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
+          <ul className="mt-4 space-y-2 text-sm text-ink-foreground/70">
             {[
               { to: "/", label: "Home" },
               { to: "/about", label: "About Eworld" },
               { to: "/contact", label: "Contact us" },
             ].map((l) => (
               <li key={l.to}>
-                <Link to={l.to} className="hover:text-foreground">
+                <Link to={l.to} className="hover:text-ink-foreground">
                   {l.label}
                 </Link>
               </li>
             ))}
             <li>
-              <a href="/sitemap.xml" className="hover:text-foreground">
+              <a href="/sitemap.xml" className="hover:text-ink-foreground">
                 Sitemap
               </a>
             </li>
           </ul>
-          <p className="mt-5 text-sm text-muted-foreground">
+          <p className="mt-5 text-sm text-ink-foreground/70">
             Eworld since {site.since} — Calicut-based website design, hosting, digital marketing and
             AI solutions for businesses across Kerala, India and the Gulf.
           </p>
         </div>
 
       </div>
-      <div className="border-t border-border/60 px-5 py-6 text-center text-xs text-muted-foreground">
+      <div className="border-t border-ink-foreground/15 px-5 py-6 text-center text-xs text-ink-foreground/60">
         &copy; {new Date().getFullYear()} {site.name}. All rights reserved.
       </div>
     </footer>

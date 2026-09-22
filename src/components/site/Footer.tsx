@@ -15,9 +15,9 @@ export function Footer() {
               src={logoAsset.url}
               alt="Eworld logo"
               loading="lazy"
-              width={190}
-              height={58}
-              className="h-9 w-auto"
+              width={230}
+              height={70}
+              className="h-11 w-auto"
             />
           </span>
           <h2 className="mt-5 font-display text-lg font-semibold">Get in touch</h2>

@@ -55,9 +55,9 @@ export function Header() {
             <img
               src={logoAsset.url}
               alt="Eworld logo"
-              width={190}
-              height={58}
-              className="h-10 w-auto sm:h-11"
+              width={230}
+              height={70}
+              className="h-12 w-auto sm:h-14"
             />
           </span>
         </Link>

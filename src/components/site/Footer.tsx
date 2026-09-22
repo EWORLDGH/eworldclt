@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { MapPin, Phone, Mail, MessageCircle } from "lucide-react";
-import logoAsset from "@/assets/eworld-cloud-logo.png.asset.json";
+import logoAsset from "@/assets/eworld-cloud-logo-transparent.png.asset.json";
 import { site, telHref } from "@/lib/site";
 
 

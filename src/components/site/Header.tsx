@@ -1,7 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { useState } from "react";
 import { Menu, X, Phone, ChevronDown, User, Users, UserPlus, ExternalLink } from "lucide-react";
-import logoAsset from "@/assets/eworld-logo.png.asset.json";
+import logoAsset from "@/assets/eworld-cloud-logo.png.asset.json";
 import { site, telHref } from "@/lib/site";
 import { primaryNav, accountLinks, type NavLink } from "@/lib/nav";
 
@@ -54,10 +54,10 @@ export function Header() {
           <span className="inline-block transition-transform hover:scale-[1.03]">
             <img
               src={logoAsset.url}
-              alt="Eworld Information Systems logo"
-              width={301}
-              height={78}
-              className="h-9 w-auto"
+              alt="Eworld logo"
+              width={190}
+              height={58}
+              className="h-10 w-auto sm:h-11"
             />
           </span>
         </Link>

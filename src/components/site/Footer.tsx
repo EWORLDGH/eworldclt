@@ -1,10 +1,12 @@
 import { Link } from "@tanstack/react-router";
 import { MapPin, Phone, Mail, MessageCircle } from "lucide-react";
 import logoAsset from "@/assets/eworld-cloud-logo-transparent.png.asset.json";
-import { site, telHref } from "@/lib/site";
+import { telHref } from "@/lib/site";
+import { useSite } from "@/lib/content";
 
 
 export function Footer() {
+  const site = useSite();
   return (
     <footer className="bg-ink text-ink-foreground">
       <div className="mx-auto grid max-w-7xl gap-10 px-5 py-14 md:grid-cols-2 lg:grid-cols-4">

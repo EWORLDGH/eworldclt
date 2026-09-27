@@ -1,9 +1,10 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { windowsResellerPlans as plans } from "@/lib/plan-defaults";
 import pageImage from "@/assets/hosting.jpg";
 import { Header } from "@/components/site/Header";
 import { Footer } from "@/components/site/Footer";
 import { PageHero, CtaBand, RelatedLinks } from "@/components/site/Section";
-import { Plans, type Plan } from "@/components/site/Plans";
+import { Plans } from "@/components/site/Plans";
 
 const title = "Windows Reseller Hosting Plans — Plesk & ASP.NET | Eworld";
 const description =
@@ -24,41 +25,6 @@ export const Route = createFileRoute("/windows-reseller-hosting")({
   component: WindowsReseller,
 });
 
-const plans: Plan[] = [
-  {
-    name: "Basic",
-    price: "₹649/mo",
-    note: "Great for ASP.NET starters",
-    features: ["50 GB SSD storage", "500 GB bandwidth", "25 Plesk accounts", "1 MSSQL database per site", "Free SSL"],
-  },
-  {
-    name: "Advanced",
-    price: "₹1,249/mo",
-    note: "Best value for agencies",
-    highlight: true,
-    features: [
-      "150 GB SSD storage",
-      "1.5 TB bandwidth",
-      "100 Plesk accounts",
-      "ASP.NET Core & Classic ASP",
-      "White-label nameservers",
-      "Daily backups",
-    ],
-  },
-  {
-    name: "Premium",
-    price: "₹2,399/mo",
-    note: "High-volume reselling",
-    features: [
-      "400 GB SSD storage",
-      "Unmetered bandwidth",
-      "Unlimited Plesk accounts",
-      "Unlimited MSSQL databases",
-      "Private DNS & branding",
-      "Priority support & migration",
-    ],
-  },
-];
 
 function WindowsReseller() {
   return (

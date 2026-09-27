@@ -1,4 +1,5 @@
 import { Check } from "lucide-react";
+import { usePlans } from "@/lib/content";
 
 export type Plan = {
   name: string;
@@ -23,12 +24,13 @@ export function Plans({
   ctaHref?: string;
   onCta?: () => void;
 }) {
+  const shown = usePlans(plans);
   return (
     <section className="mx-auto max-w-7xl px-5 py-16">
       <h2 className="font-display text-2xl font-bold tracking-tight sm:text-3xl">{title}</h2>
       {subtitle ? <p className="mt-3 max-w-2xl text-muted-foreground">{subtitle}</p> : null}
       <div className="mt-10 grid gap-6 md:grid-cols-3">
-        {plans.map((p) => (
+        {shown.map((p) => (
           <article
             key={p.name}
             className={`flex flex-col rounded-2xl border bg-card p-6 ${

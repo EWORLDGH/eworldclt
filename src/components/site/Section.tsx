@@ -130,15 +130,16 @@ export function RelatedLinks({ current }: { current?: string }) {
 }
 
 export function CtaBand() {
+  const cta = useCta();
   return (
     <section className="bg-ink bg-grid-dark text-ink-foreground">
       <div className="mx-auto flex max-w-5xl flex-col items-center gap-4 px-5 py-14 text-center">
         <h2 className="font-display text-2xl font-bold sm:text-3xl">
-          Ready to modernise your website?
+          {cta.title ?? "Ready to modernise your website?"}
         </h2>
         <p className="max-w-2xl text-sm text-ink-foreground/70">
-          Talk to our Calicut team about design, hosting, SEO and AI integration — one partner for
-          your whole digital presence.
+          {cta.body ??
+            "Talk to our Calicut team about design, hosting, SEO and AI integration — one partner for your whole digital presence."}
         </p>
         <Link
           to="/contact"

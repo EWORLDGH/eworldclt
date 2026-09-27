@@ -25,6 +25,7 @@ import { Route as SslCertificateRouteImport } from './routes/ssl-certificate'
 import { Route as WebsiteBackupRouteImport } from './routes/website-backup'
 import { Route as WindowsResellerHostingRouteImport } from './routes/windows-reseller-hosting'
 import { Route as ZohoMailRouteImport } from './routes/zoho-mail'
+import { Route as ApiPublicImgSplatRouteImport } from './routes/api/public/img/$'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -106,6 +107,11 @@ const ZohoMailRoute = ZohoMailRouteImport.update({
   path: '/zoho-mail',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ApiPublicImgSplatRoute = ApiPublicImgSplatRouteImport.update({
+  id: '/api/public/img/$',
+  path: '/api/public/img/$',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -124,6 +130,7 @@ export interface FileRoutesByFullPath {
   '/website-backup': typeof WebsiteBackupRoute
   '/windows-reseller-hosting': typeof WindowsResellerHostingRoute
   '/zoho-mail': typeof ZohoMailRoute
+  '/api/public/img/$': typeof ApiPublicImgSplatRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -142,6 +149,7 @@ export interface FileRoutesByTo {
   '/website-backup': typeof WebsiteBackupRoute
   '/windows-reseller-hosting': typeof WindowsResellerHostingRoute
   '/zoho-mail': typeof ZohoMailRoute
+  '/api/public/img/$': typeof ApiPublicImgSplatRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -161,6 +169,7 @@ export interface FileRoutesById {
   '/website-backup': typeof WebsiteBackupRoute
   '/windows-reseller-hosting': typeof WindowsResellerHostingRoute
   '/zoho-mail': typeof ZohoMailRoute
+  '/api/public/img/$': typeof ApiPublicImgSplatRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -181,6 +190,7 @@ export interface FileRouteTypes {
     | '/website-backup'
     | '/windows-reseller-hosting'
     | '/zoho-mail'
+    | '/api/public/img/$'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -199,6 +209,7 @@ export interface FileRouteTypes {
     | '/website-backup'
     | '/windows-reseller-hosting'
     | '/zoho-mail'
+    | '/api/public/img/$'
   id:
     | '__root__'
     | '/'
@@ -217,6 +228,7 @@ export interface FileRouteTypes {
     | '/website-backup'
     | '/windows-reseller-hosting'
     | '/zoho-mail'
+    | '/api/public/img/$'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -236,6 +248,7 @@ export interface RootRouteChildren {
   WebsiteBackupRoute: typeof WebsiteBackupRoute
   WindowsResellerHostingRoute: typeof WindowsResellerHostingRoute
   ZohoMailRoute: typeof ZohoMailRoute
+  ApiPublicImgSplatRoute: typeof ApiPublicImgSplatRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -352,6 +365,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ZohoMailRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/api/public/img/$': {
+      id: '/api/public/img/$'
+      path: '/api/public/img/$'
+      fullPath: '/api/public/img/$'
+      preLoaderRoute: typeof ApiPublicImgSplatRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -372,6 +392,7 @@ const rootRouteChildren: RootRouteChildren = {
   WebsiteBackupRoute: WebsiteBackupRoute,
   WindowsResellerHostingRoute: WindowsResellerHostingRoute,
   ZohoMailRoute: ZohoMailRoute,
+  ApiPublicImgSplatRoute: ApiPublicImgSplatRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

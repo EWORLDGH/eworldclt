@@ -1,20 +1,21 @@
 import { Link } from "@tanstack/react-router";
 import { ArrowRight, Check } from "lucide-react";
 import type { ReactNode } from "react";
+import { useCta, useHero } from "@/lib/content";
 
-export function PageHero({
-  eyebrow,
-  title,
-  image,
-  imageAlt,
-  children,
-}: {
+export function PageHero(props: {
   eyebrow: string;
   title: string;
   image?: string;
   imageAlt?: string;
   children?: ReactNode;
 }) {
+  const o = useHero();
+  const eyebrow = o.eyebrow ?? props.eyebrow;
+  const title = o.title ?? props.title;
+  const image = o.image ?? props.image;
+  const imageAlt = props.imageAlt;
+  const children = o.body ?? props.children;
   return (
     <section className="bg-ink bg-grid-dark text-ink-foreground">
       <div className="mx-auto grid max-w-7xl items-center gap-10 px-5 py-16 lg:grid-cols-2 lg:py-20">

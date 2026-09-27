@@ -10,8 +10,10 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AuthenticatedRouteRouteImport } from './routes/_authenticated/route'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as AiSolutionsRouteImport } from './routes/ai-solutions'
+import { Route as AuthRouteImport } from './routes/auth'
 import { Route as CloudHostingRouteImport } from './routes/cloud-hosting'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as DigitalMarketingRouteImport } from './routes/digital-marketing'
@@ -25,11 +27,16 @@ import { Route as SslCertificateRouteImport } from './routes/ssl-certificate'
 import { Route as WebsiteBackupRouteImport } from './routes/website-backup'
 import { Route as WindowsResellerHostingRouteImport } from './routes/windows-reseller-hosting'
 import { Route as ZohoMailRouteImport } from './routes/zoho-mail'
+import { Route as AuthenticatedAdminRouteImport } from './routes/_authenticated/admin'
 import { Route as ApiPublicImgSplatRouteImport } from './routes/api/public/img/$'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AuthenticatedRouteRoute = AuthenticatedRouteRouteImport.update({
+  id: '/_authenticated',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AboutRoute = AboutRouteImport.update({
@@ -40,6 +47,11 @@ const AboutRoute = AboutRouteImport.update({
 const AiSolutionsRoute = AiSolutionsRouteImport.update({
   id: '/ai-solutions',
   path: '/ai-solutions',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AuthRoute = AuthRouteImport.update({
+  id: '/auth',
+  path: '/auth',
   getParentRoute: () => rootRouteImport,
 } as any)
 const CloudHostingRoute = CloudHostingRouteImport.update({
@@ -107,6 +119,11 @@ const ZohoMailRoute = ZohoMailRouteImport.update({
   path: '/zoho-mail',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AuthenticatedAdminRoute = AuthenticatedAdminRouteImport.update({
+  id: '/admin',
+  path: '/admin',
+  getParentRoute: () => AuthenticatedRouteRoute,
+} as any)
 const ApiPublicImgSplatRoute = ApiPublicImgSplatRouteImport.update({
   id: '/api/public/img/$',
   path: '/api/public/img/$',
@@ -117,6 +134,7 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/ai-solutions': typeof AiSolutionsRoute
+  '/auth': typeof AuthRoute
   '/cloud-hosting': typeof CloudHostingRoute
   '/contact': typeof ContactRoute
   '/digital-marketing': typeof DigitalMarketingRoute
@@ -130,12 +148,14 @@ export interface FileRoutesByFullPath {
   '/website-backup': typeof WebsiteBackupRoute
   '/windows-reseller-hosting': typeof WindowsResellerHostingRoute
   '/zoho-mail': typeof ZohoMailRoute
+  '/admin': typeof AuthenticatedAdminRoute
   '/api/public/img/$': typeof ApiPublicImgSplatRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/ai-solutions': typeof AiSolutionsRoute
+  '/auth': typeof AuthRoute
   '/cloud-hosting': typeof CloudHostingRoute
   '/contact': typeof ContactRoute
   '/digital-marketing': typeof DigitalMarketingRoute
@@ -149,13 +169,16 @@ export interface FileRoutesByTo {
   '/website-backup': typeof WebsiteBackupRoute
   '/windows-reseller-hosting': typeof WindowsResellerHostingRoute
   '/zoho-mail': typeof ZohoMailRoute
+  '/admin': typeof AuthenticatedAdminRoute
   '/api/public/img/$': typeof ApiPublicImgSplatRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/_authenticated': typeof AuthenticatedRouteRouteWithChildren
   '/about': typeof AboutRoute
   '/ai-solutions': typeof AiSolutionsRoute
+  '/auth': typeof AuthRoute
   '/cloud-hosting': typeof CloudHostingRoute
   '/contact': typeof ContactRoute
   '/digital-marketing': typeof DigitalMarketingRoute
@@ -169,6 +192,7 @@ export interface FileRoutesById {
   '/website-backup': typeof WebsiteBackupRoute
   '/windows-reseller-hosting': typeof WindowsResellerHostingRoute
   '/zoho-mail': typeof ZohoMailRoute
+  '/_authenticated/admin': typeof AuthenticatedAdminRoute
   '/api/public/img/$': typeof ApiPublicImgSplatRoute
 }
 export interface FileRouteTypes {
@@ -177,6 +201,7 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/ai-solutions'
+    | '/auth'
     | '/cloud-hosting'
     | '/contact'
     | '/digital-marketing'
@@ -190,12 +215,14 @@ export interface FileRouteTypes {
     | '/website-backup'
     | '/windows-reseller-hosting'
     | '/zoho-mail'
+    | '/admin'
     | '/api/public/img/$'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/about'
     | '/ai-solutions'
+    | '/auth'
     | '/cloud-hosting'
     | '/contact'
     | '/digital-marketing'
@@ -209,12 +236,15 @@ export interface FileRouteTypes {
     | '/website-backup'
     | '/windows-reseller-hosting'
     | '/zoho-mail'
+    | '/admin'
     | '/api/public/img/$'
   id:
     | '__root__'
     | '/'
+    | '/_authenticated'
     | '/about'
     | '/ai-solutions'
+    | '/auth'
     | '/cloud-hosting'
     | '/contact'
     | '/digital-marketing'
@@ -228,13 +258,16 @@ export interface FileRouteTypes {
     | '/website-backup'
     | '/windows-reseller-hosting'
     | '/zoho-mail'
+    | '/_authenticated/admin'
     | '/api/public/img/$'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AuthenticatedRouteRoute: typeof AuthenticatedRouteRouteWithChildren
   AboutRoute: typeof AboutRoute
   AiSolutionsRoute: typeof AiSolutionsRoute
+  AuthRoute: typeof AuthRoute
   CloudHostingRoute: typeof CloudHostingRoute
   ContactRoute: typeof ContactRoute
   DigitalMarketingRoute: typeof DigitalMarketingRoute
@@ -260,6 +293,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/_authenticated': {
+      id: '/_authenticated'
+      path: ''
+      fullPath: '/'
+      preLoaderRoute: typeof AuthenticatedRouteRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/about': {
       id: '/about'
       path: '/about'
@@ -272,6 +312,13 @@ declare module '@tanstack/react-router' {
       path: '/ai-solutions'
       fullPath: '/ai-solutions'
       preLoaderRoute: typeof AiSolutionsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/auth': {
+      id: '/auth'
+      path: '/auth'
+      fullPath: '/auth'
+      preLoaderRoute: typeof AuthRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/cloud-hosting': {
@@ -365,6 +412,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ZohoMailRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/_authenticated/admin': {
+      id: '/_authenticated/admin'
+      path: '/admin'
+      fullPath: '/admin'
+      preLoaderRoute: typeof AuthenticatedAdminRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
     '/api/public/img/$': {
       id: '/api/public/img/$'
       path: '/api/public/img/$'
@@ -375,10 +429,23 @@ declare module '@tanstack/react-router' {
   }
 }
 
+interface AuthenticatedRouteRouteChildren {
+  AuthenticatedAdminRoute: typeof AuthenticatedAdminRoute
+}
+
+const AuthenticatedRouteRouteChildren: AuthenticatedRouteRouteChildren = {
+  AuthenticatedAdminRoute: AuthenticatedAdminRoute,
+}
+
+const AuthenticatedRouteRouteWithChildren =
+  AuthenticatedRouteRoute._addFileChildren(AuthenticatedRouteRouteChildren)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AuthenticatedRouteRoute: AuthenticatedRouteRouteWithChildren,
   AboutRoute: AboutRoute,
   AiSolutionsRoute: AiSolutionsRoute,
+  AuthRoute: AuthRoute,
   CloudHostingRoute: CloudHostingRoute,
   ContactRoute: ContactRoute,
   DigitalMarketingRoute: DigitalMarketingRoute,

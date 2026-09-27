@@ -1,3 +1,4 @@
+import { useSite } from "@/lib/content";
 import { createFileRoute } from "@tanstack/react-router";
 import { Mail, MapPin, MessageCircle, Phone } from "lucide-react";
 import pageImage from "@/assets/web-design.jpg";
@@ -26,6 +27,7 @@ export const Route = createFileRoute("/contact")({
 });
 
 function Contact() {
+  const site = useSite();
   return (
     <div className="min-h-screen">
       <Header />

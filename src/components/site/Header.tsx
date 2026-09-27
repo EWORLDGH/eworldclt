@@ -2,7 +2,8 @@ import { Link } from "@tanstack/react-router";
 import { useState } from "react";
 import { Menu, X, Phone, ChevronDown, User, Users, UserPlus, ExternalLink } from "lucide-react";
 import logoAsset from "@/assets/eworld-cloud-logo-transparent.png.asset.json";
-import { site, telHref } from "@/lib/site";
+import { telHref } from "@/lib/site";
+import { useSite } from "@/lib/content";
 import { primaryNav, accountLinks, type NavLink } from "@/lib/nav";
 
 const accountIcon = { user: User, users: Users, userplus: UserPlus } as const;
@@ -26,6 +27,7 @@ function NavItemLink({ link, onNavigate }: { link: NavLink; onNavigate?: () => v
 }
 
 export function Header() {
+  const site = useSite();
   const [open, setOpen] = useState(false);
 
   return (

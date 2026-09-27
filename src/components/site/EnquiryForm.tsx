@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { site } from "@/lib/site";
+import { supabase } from "@/integrations/supabase/client";
+import { useSite } from "@/lib/content";
 
 const countries = [
   "India (+91)",
@@ -15,6 +16,7 @@ const countries = [
 ];
 
 export function EnquiryForm({ service, id = "enquiry" }: { service: string; id?: string }) {
+  const site = useSite();
   const [sent, setSent] = useState(false);
   const [form, setForm] = useState({
     domain: "",
@@ -27,8 +29,17 @@ export function EnquiryForm({ service, id = "enquiry" }: { service: string; id?:
   const set = (k: keyof typeof form) => (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) =>
     setForm((f) => ({ ...f, [k]: e.target.value }));
 
-  const submit = (e: React.FormEvent) => {
+  const submit = async (e: React.FormEvent) => {
     e.preventDefault();
+    const { error } = await supabase.from("enquiries").insert({
+      service,
+      domain: form.domain.trim(),
+      accounts: Number(form.accounts),
+      email: form.email.trim(),
+      country: form.country,
+      mobile: form.mobile.trim(),
+    });
+    if (error) console.error("Enquiry save failed", error.message);
     const body = [
       `Service: ${service}`,
       `Domain name: ${form.domain}`,

@@ -1,20 +1,21 @@
 import { Link } from "@tanstack/react-router";
 import { ArrowRight, Check } from "lucide-react";
 import type { ReactNode } from "react";
+import { useCta, useHero } from "@/lib/content";
 
-export function PageHero({
-  eyebrow,
-  title,
-  image,
-  imageAlt,
-  children,
-}: {
+export function PageHero(props: {
   eyebrow: string;
   title: string;
   image?: string;
   imageAlt?: string;
   children?: ReactNode;
 }) {
+  const o = useHero();
+  const eyebrow = o.eyebrow ?? props.eyebrow;
+  const title = o.title ?? props.title;
+  const image = o.image ?? props.image;
+  const imageAlt = props.imageAlt;
+  const children = o.body ?? props.children;
   return (
     <section className="bg-ink bg-grid-dark text-ink-foreground">
       <div className="mx-auto grid max-w-7xl items-center gap-10 px-5 py-16 lg:grid-cols-2 lg:py-20">
@@ -129,15 +130,16 @@ export function RelatedLinks({ current }: { current?: string }) {
 }
 
 export function CtaBand() {
+  const cta = useCta();
   return (
     <section className="bg-ink bg-grid-dark text-ink-foreground">
       <div className="mx-auto flex max-w-5xl flex-col items-center gap-4 px-5 py-14 text-center">
         <h2 className="font-display text-2xl font-bold sm:text-3xl">
-          Ready to modernise your website?
+          {cta.title ?? "Ready to modernise your website?"}
         </h2>
         <p className="max-w-2xl text-sm text-ink-foreground/70">
-          Talk to our Calicut team about design, hosting, SEO and AI integration — one partner for
-          your whole digital presence.
+          {cta.body ??
+            "Talk to our Calicut team about design, hosting, SEO and AI integration — one partner for your whole digital presence."}
         </p>
         <Link
           to="/contact"

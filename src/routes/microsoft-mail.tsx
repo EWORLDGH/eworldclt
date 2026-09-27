@@ -1,9 +1,10 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { microsoftMailPlans as plans } from "@/lib/plan-defaults";
 import pageImage from "@/assets/web-design.jpg";
 import { Header } from "@/components/site/Header";
 import { Footer } from "@/components/site/Footer";
 import { PageHero, Cards, RelatedLinks } from "@/components/site/Section";
-import { Plans, type Plan } from "@/components/site/Plans";
+import { Plans } from "@/components/site/Plans";
 import { EnquiryForm } from "@/components/site/EnquiryForm";
 
 const title = "Microsoft 365 Mail for Business in India — Plans | Eworld";
@@ -48,39 +49,6 @@ const features = [
   },
 ];
 
-const plans: Plan[] = [
-  {
-    name: "Business Basic",
-    price: "₹145 /user/mo",
-    note: "Web & mobile apps",
-    features: ["50 GB mailbox", "Custom domain email", "Teams, OneDrive 1 TB", "Web versions of Office"],
-  },
-  {
-    name: "Business Standard",
-    price: "₹770 /user/mo",
-    note: "Most popular",
-    highlight: true,
-    features: [
-      "50 GB mailbox",
-      "Desktop Office apps",
-      "Teams webinars",
-      "OneDrive 1 TB",
-      "SharePoint & Bookings",
-    ],
-  },
-  {
-    name: "Business Premium",
-    price: "₹1,499 /user/mo",
-    note: "Advanced security",
-    features: [
-      "100 GB mailbox",
-      "Defender for Office 365",
-      "Intune device management",
-      "Conditional access & MFA policies",
-      "Archiving & eDiscovery",
-    ],
-  },
-];
 
 function MicrosoftMail() {
   return (

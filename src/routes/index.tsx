@@ -1,3 +1,4 @@
+import { useHero, useSite } from "@/lib/content";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, Bot, Globe, Server, TrendingUp, ShieldCheck, Sparkles } from "lucide-react";
 import heroImage from "@/assets/hero.jpg";
@@ -93,6 +94,8 @@ const services = [
 
 
 function Home() {
+  const site = useSite();
+  const hero = useHero("/");
   return (
     <div className="min-h-screen">
       <Header />
@@ -104,12 +107,10 @@ function Home() {
                 <Sparkles className="size-3.5" /> Since {site.since} · Now AI-powered
               </span>
               <h1 className="mt-6 font-display text-4xl font-bold leading-[1.08] tracking-tight sm:text-5xl">
-                Websites, hosting and marketing — rebuilt with AI at the core.
+                {hero.title ?? "Websites, hosting and marketing — rebuilt with AI at the core."}
               </h1>
               <p className="mt-6 max-w-xl text-lg text-ink-foreground/70">
-                Eworld Information Systems has been Calicut&rsquo;s web design and hosting partner
-                for over two decades. Today we add AI assistants, automation and AI-search
-                visibility to everything we build.
+                {hero.body ?? "Eworld Information Systems has been Calicut’s web design and hosting partner for over two decades. Today we add AI assistants, automation and AI-search visibility to everything we build."}
               </p>
               <div className="mt-8 flex flex-wrap gap-3">
                 <Link
@@ -128,7 +129,7 @@ function Home() {
             </div>
             <div className="overflow-hidden rounded-3xl border border-ink-foreground/15">
               <img
-                src={heroImage}
+                src={hero.image ?? heroImage}
                 alt="AI-connected servers powering modern websites"
                 width={1920}
                 height={1088}

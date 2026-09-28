@@ -22,7 +22,7 @@ export function EnquiryForm({ service, id = "enquiry" }: { service: string; id?:
     domain: "",
     accounts: "",
     email: "",
-    country: countries[0],
+    country: countries[0] ?? "India (+91)",
     mobile: "",
   });
 

@@ -1,9 +1,9 @@
 import { createServerFn } from "@tanstack/react-start";
 import { createClient } from "@supabase/supabase-js";
 import { requireSupabaseAuth } from "@/integrations/supabase/auth-middleware";
-import type { Database } from "@/integrations/supabase/types";
+import type { Database, Json } from "@/integrations/supabase/types";
 
-export type ContentMap = Record<string, unknown>;
+export type ContentMap = Record<string, Json>;
 
 // Public: all editable site content overrides.
 export const getSiteContent = createServerFn({ method: "GET" }).handler(async () => {

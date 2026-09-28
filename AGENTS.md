@@ -8,3 +8,6 @@
 > Commits you push to the connected branch sync back to Lovable and show up in
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
+
+- Editable site content lives in the `site_content` table (keys: `contact`, `cta`, `hero:<path>`, `plans:<path>`) and overrides code defaults via hooks in src/lib/content.ts — keeps the site working with no saved edits.
+- Admin images go to the private `site-images` bucket and are served through /api/public/img/* — public buckets are blocked in this workspace.

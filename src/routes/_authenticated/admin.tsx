@@ -182,7 +182,7 @@ function PagesEditor() {
   const [uploading, setUploading] = useState(false);
 
   useEffect(() => {
-    setForm((content[key] as HeroContent) ?? {});
+    setForm((content[key] as unknown as HeroContent) ?? {});
     setStatus(null);
   }, [key, content, setStatus]);
 
@@ -254,13 +254,13 @@ function PagesEditor() {
 function PlansEditor() {
   const content = useContent();
   const [idx, setIdx] = useState(0);
-  const [path, label, defaults] = planPages[idx];
+  const [path, label, defaults] = planPages[idx] ?? planPages[0]!;
   const key = `plans:${path}`;
   const [plans, setPlans] = useState<Plan[]>(defaults);
   const { save, reset, status, setStatus } = useSave();
 
   useEffect(() => {
-    const o = content[key] as Plan[] | undefined;
+    const o = content[key] as unknown as Plan[] | undefined;
     setPlans(Array.isArray(o) && o.length ? o : defaults);
     setStatus(null);
   }, [key, content, defaults, setStatus]);
@@ -346,7 +346,7 @@ function PlansEditor() {
 
 function ContactEditor() {
   const content = useContent();
-  const current = { ...defaultSite, ...((content["contact"] as Partial<ContactContent>) ?? {}) };
+  const current = { ...defaultSite, ...((content["contact"] as unknown as Partial<ContactContent>) ?? {}) };
   const [form, setForm] = useState({
     address: current.address,
     phones: current.phones.join("\n"),
@@ -398,7 +398,7 @@ function ContactEditor() {
 
 function BannerEditor() {
   const content = useContent();
-  const [form, setForm] = useState<CtaContent>((content["cta"] as CtaContent) ?? {});
+  const [form, setForm] = useState<CtaContent>((content["cta"] as unknown as CtaContent) ?? {});
   const { save, reset, status } = useSave();
   return (
     <Card>

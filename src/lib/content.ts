@@ -34,22 +34,22 @@ const clean = <T extends object>(o: T | undefined): Partial<T> =>
 
 export function useSite() {
   const map = useContentMap();
-  return { ...defaultSite, ...clean(map["contact"] as ContactContent | undefined) };
+  return { ...defaultSite, ...clean(map["contact"] as unknown as ContactContent | undefined) };
 }
 
 export function useHero(path?: string): HeroContent {
   const map = useContentMap();
   const loc = useLocation();
-  return clean(map[`hero:${path ?? loc.pathname}`] as HeroContent | undefined);
+  return clean(map[`hero:${path ?? loc.pathname}`] as unknown as HeroContent | undefined);
 }
 
 export function useCta(): CtaContent {
-  return clean(useContentMap()["cta"] as CtaContent | undefined);
+  return clean(useContentMap()["cta"] as unknown as CtaContent | undefined);
 }
 
 export function usePlans(defaults: Plan[]): Plan[] {
   const map = useContentMap();
   const loc = useLocation();
-  const override = map[`plans:${loc.pathname}`] as Plan[] | undefined;
+  const override = map[`plans:${loc.pathname}`] as unknown as Plan[] | undefined;
   return Array.isArray(override) && override.length ? override : defaults;
 }

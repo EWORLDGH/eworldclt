@@ -142,6 +142,7 @@ export function Footer() {
               { to: "/", label: "Home" },
               { to: "/about", label: "About Eworld" },
               { to: "/contact", label: "Contact us" },
+              { to: "/payment-methods", label: "Payment methods" },
             ].map((l) => (
               <li key={l.to}>
                 <Link to={l.to} className="hover:text-ink-foreground">

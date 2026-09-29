@@ -23,6 +23,7 @@ import { Route as LinuxHostingRouteImport } from './routes/linux-hosting'
 import { Route as LinuxResellerHostingRouteImport } from './routes/linux-reseller-hosting'
 import { Route as ManagedServersRouteImport } from './routes/managed-servers'
 import { Route as MicrosoftMailRouteImport } from './routes/microsoft-mail'
+import { Route as PaymentMethodsRouteImport } from './routes/payment-methods'
 import { Route as ServicesRouteImport } from './routes/services'
 import { Route as SiteLockRouteImport } from './routes/site-lock'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
@@ -105,6 +106,11 @@ const MicrosoftMailRoute = MicrosoftMailRouteImport.update({
   path: '/microsoft-mail',
   getParentRoute: () => rootRouteImport,
 } as any)
+const PaymentMethodsRoute = PaymentMethodsRouteImport.update({
+  id: '/payment-methods',
+  path: '/payment-methods',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ServicesRoute = ServicesRouteImport.update({
   id: '/services',
   path: '/services',
@@ -180,6 +186,7 @@ export interface FileRoutesByFullPath {
   '/linux-reseller-hosting': typeof LinuxResellerHostingRoute
   '/managed-servers': typeof ManagedServersRoute
   '/microsoft-mail': typeof MicrosoftMailRoute
+  '/payment-methods': typeof PaymentMethodsRoute
   '/services': typeof ServicesRoute
   '/site-lock': typeof SiteLockRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
@@ -207,6 +214,7 @@ export interface FileRoutesByTo {
   '/linux-reseller-hosting': typeof LinuxResellerHostingRoute
   '/managed-servers': typeof ManagedServersRoute
   '/microsoft-mail': typeof MicrosoftMailRoute
+  '/payment-methods': typeof PaymentMethodsRoute
   '/services': typeof ServicesRoute
   '/site-lock': typeof SiteLockRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
@@ -236,6 +244,7 @@ export interface FileRoutesById {
   '/linux-reseller-hosting': typeof LinuxResellerHostingRoute
   '/managed-servers': typeof ManagedServersRoute
   '/microsoft-mail': typeof MicrosoftMailRoute
+  '/payment-methods': typeof PaymentMethodsRoute
   '/services': typeof ServicesRoute
   '/site-lock': typeof SiteLockRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
@@ -265,6 +274,7 @@ export interface FileRouteTypes {
     | '/linux-reseller-hosting'
     | '/managed-servers'
     | '/microsoft-mail'
+    | '/payment-methods'
     | '/services'
     | '/site-lock'
     | '/sitemap.xml'
@@ -292,6 +302,7 @@ export interface FileRouteTypes {
     | '/linux-reseller-hosting'
     | '/managed-servers'
     | '/microsoft-mail'
+    | '/payment-methods'
     | '/services'
     | '/site-lock'
     | '/sitemap.xml'
@@ -320,6 +331,7 @@ export interface FileRouteTypes {
     | '/linux-reseller-hosting'
     | '/managed-servers'
     | '/microsoft-mail'
+    | '/payment-methods'
     | '/services'
     | '/site-lock'
     | '/sitemap.xml'
@@ -349,6 +361,7 @@ export interface RootRouteChildren {
   LinuxResellerHostingRoute: typeof LinuxResellerHostingRoute
   ManagedServersRoute: typeof ManagedServersRoute
   MicrosoftMailRoute: typeof MicrosoftMailRoute
+  PaymentMethodsRoute: typeof PaymentMethodsRoute
   ServicesRoute: typeof ServicesRoute
   SiteLockRoute: typeof SiteLockRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
@@ -460,6 +473,13 @@ declare module '@tanstack/react-router' {
       path: '/microsoft-mail'
       fullPath: '/microsoft-mail'
       preLoaderRoute: typeof MicrosoftMailRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/payment-methods': {
+      id: '/payment-methods'
+      path: '/payment-methods'
+      fullPath: '/payment-methods'
+      preLoaderRoute: typeof PaymentMethodsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/services': {
@@ -575,6 +595,7 @@ const rootRouteChildren: RootRouteChildren = {
   LinuxResellerHostingRoute: LinuxResellerHostingRoute,
   ManagedServersRoute: ManagedServersRoute,
   MicrosoftMailRoute: MicrosoftMailRoute,
+  PaymentMethodsRoute: PaymentMethodsRoute,
   ServicesRoute: ServicesRoute,
   SiteLockRoute: SiteLockRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,

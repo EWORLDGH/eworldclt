@@ -53,22 +53,22 @@ export const primaryNav: NavItem[] = [
       {
         heading: "Shared hosting",
         links: [
-          { label: "Linux hosting", href: "https://eworld.co.in/linux-shared-hosting.html" },
-          { label: "Windows hosting", href: "https://eworld.co.in/windows-shared-hosting.html" },
-          { label: "WordPress hosting", href: "https://eworld.co.in/wordpress-%20hosting.html" },
+          { label: "Linux hosting", to: "/linux-hosting" },
+          { label: "Windows hosting", to: "/windows-hosting" },
+          { label: "WordPress hosting", to: "/wordpress-hosting" },
         ],
       },
       {
         heading: "Servers",
         links: [
-          { label: "VPS", href: "https://eworld.co.in/Virtual-private-servers-linux.html" },
+          { label: "VPS", to: "/vps-hosting" },
           {
             label: "Dedicated Servers",
-            href: "https://eworld.co.in/linux-dedicated-servers.html",
+            to: "/dedicated-servers",
           },
           {
             label: "Managed Servers",
-            href: "https://eworld.co.in/managed-linux-dedicated-servers.html",
+            to: "/managed-servers",
           },
           { label: "Cloud Hosting", to: "/cloud-hosting" },
         ],

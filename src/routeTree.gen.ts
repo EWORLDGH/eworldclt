@@ -16,16 +16,22 @@ import { Route as AiSolutionsRouteImport } from './routes/ai-solutions'
 import { Route as AuthRouteImport } from './routes/auth'
 import { Route as CloudHostingRouteImport } from './routes/cloud-hosting'
 import { Route as ContactRouteImport } from './routes/contact'
+import { Route as DedicatedServersRouteImport } from './routes/dedicated-servers'
 import { Route as DigitalMarketingRouteImport } from './routes/digital-marketing'
 import { Route as HostingRouteImport } from './routes/hosting'
+import { Route as LinuxHostingRouteImport } from './routes/linux-hosting'
 import { Route as LinuxResellerHostingRouteImport } from './routes/linux-reseller-hosting'
+import { Route as ManagedServersRouteImport } from './routes/managed-servers'
 import { Route as MicrosoftMailRouteImport } from './routes/microsoft-mail'
 import { Route as ServicesRouteImport } from './routes/services'
 import { Route as SiteLockRouteImport } from './routes/site-lock'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as SslCertificateRouteImport } from './routes/ssl-certificate'
+import { Route as VpsHostingRouteImport } from './routes/vps-hosting'
 import { Route as WebsiteBackupRouteImport } from './routes/website-backup'
+import { Route as WindowsHostingRouteImport } from './routes/windows-hosting'
 import { Route as WindowsResellerHostingRouteImport } from './routes/windows-reseller-hosting'
+import { Route as WordpressHostingRouteImport } from './routes/wordpress-hosting'
 import { Route as ZohoMailRouteImport } from './routes/zoho-mail'
 import { Route as AuthenticatedAdminRouteImport } from './routes/_authenticated/admin'
 import { Route as ApiPublicImgSplatRouteImport } from './routes/api/public/img/$'
@@ -64,6 +70,11 @@ const ContactRoute = ContactRouteImport.update({
   path: '/contact',
   getParentRoute: () => rootRouteImport,
 } as any)
+const DedicatedServersRoute = DedicatedServersRouteImport.update({
+  id: '/dedicated-servers',
+  path: '/dedicated-servers',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const DigitalMarketingRoute = DigitalMarketingRouteImport.update({
   id: '/digital-marketing',
   path: '/digital-marketing',
@@ -74,9 +85,19 @@ const HostingRoute = HostingRouteImport.update({
   path: '/hosting',
   getParentRoute: () => rootRouteImport,
 } as any)
+const LinuxHostingRoute = LinuxHostingRouteImport.update({
+  id: '/linux-hosting',
+  path: '/linux-hosting',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const LinuxResellerHostingRoute = LinuxResellerHostingRouteImport.update({
   id: '/linux-reseller-hosting',
   path: '/linux-reseller-hosting',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ManagedServersRoute = ManagedServersRouteImport.update({
+  id: '/managed-servers',
+  path: '/managed-servers',
   getParentRoute: () => rootRouteImport,
 } as any)
 const MicrosoftMailRoute = MicrosoftMailRouteImport.update({
@@ -104,14 +125,29 @@ const SslCertificateRoute = SslCertificateRouteImport.update({
   path: '/ssl-certificate',
   getParentRoute: () => rootRouteImport,
 } as any)
+const VpsHostingRoute = VpsHostingRouteImport.update({
+  id: '/vps-hosting',
+  path: '/vps-hosting',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const WebsiteBackupRoute = WebsiteBackupRouteImport.update({
   id: '/website-backup',
   path: '/website-backup',
   getParentRoute: () => rootRouteImport,
 } as any)
+const WindowsHostingRoute = WindowsHostingRouteImport.update({
+  id: '/windows-hosting',
+  path: '/windows-hosting',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const WindowsResellerHostingRoute = WindowsResellerHostingRouteImport.update({
   id: '/windows-reseller-hosting',
   path: '/windows-reseller-hosting',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const WordpressHostingRoute = WordpressHostingRouteImport.update({
+  id: '/wordpress-hosting',
+  path: '/wordpress-hosting',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ZohoMailRoute = ZohoMailRouteImport.update({
@@ -137,16 +173,22 @@ export interface FileRoutesByFullPath {
   '/auth': typeof AuthRoute
   '/cloud-hosting': typeof CloudHostingRoute
   '/contact': typeof ContactRoute
+  '/dedicated-servers': typeof DedicatedServersRoute
   '/digital-marketing': typeof DigitalMarketingRoute
   '/hosting': typeof HostingRoute
+  '/linux-hosting': typeof LinuxHostingRoute
   '/linux-reseller-hosting': typeof LinuxResellerHostingRoute
+  '/managed-servers': typeof ManagedServersRoute
   '/microsoft-mail': typeof MicrosoftMailRoute
   '/services': typeof ServicesRoute
   '/site-lock': typeof SiteLockRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/ssl-certificate': typeof SslCertificateRoute
+  '/vps-hosting': typeof VpsHostingRoute
   '/website-backup': typeof WebsiteBackupRoute
+  '/windows-hosting': typeof WindowsHostingRoute
   '/windows-reseller-hosting': typeof WindowsResellerHostingRoute
+  '/wordpress-hosting': typeof WordpressHostingRoute
   '/zoho-mail': typeof ZohoMailRoute
   '/admin': typeof AuthenticatedAdminRoute
   '/api/public/img/$': typeof ApiPublicImgSplatRoute
@@ -158,16 +200,22 @@ export interface FileRoutesByTo {
   '/auth': typeof AuthRoute
   '/cloud-hosting': typeof CloudHostingRoute
   '/contact': typeof ContactRoute
+  '/dedicated-servers': typeof DedicatedServersRoute
   '/digital-marketing': typeof DigitalMarketingRoute
   '/hosting': typeof HostingRoute
+  '/linux-hosting': typeof LinuxHostingRoute
   '/linux-reseller-hosting': typeof LinuxResellerHostingRoute
+  '/managed-servers': typeof ManagedServersRoute
   '/microsoft-mail': typeof MicrosoftMailRoute
   '/services': typeof ServicesRoute
   '/site-lock': typeof SiteLockRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/ssl-certificate': typeof SslCertificateRoute
+  '/vps-hosting': typeof VpsHostingRoute
   '/website-backup': typeof WebsiteBackupRoute
+  '/windows-hosting': typeof WindowsHostingRoute
   '/windows-reseller-hosting': typeof WindowsResellerHostingRoute
+  '/wordpress-hosting': typeof WordpressHostingRoute
   '/zoho-mail': typeof ZohoMailRoute
   '/admin': typeof AuthenticatedAdminRoute
   '/api/public/img/$': typeof ApiPublicImgSplatRoute
@@ -181,16 +229,22 @@ export interface FileRoutesById {
   '/auth': typeof AuthRoute
   '/cloud-hosting': typeof CloudHostingRoute
   '/contact': typeof ContactRoute
+  '/dedicated-servers': typeof DedicatedServersRoute
   '/digital-marketing': typeof DigitalMarketingRoute
   '/hosting': typeof HostingRoute
+  '/linux-hosting': typeof LinuxHostingRoute
   '/linux-reseller-hosting': typeof LinuxResellerHostingRoute
+  '/managed-servers': typeof ManagedServersRoute
   '/microsoft-mail': typeof MicrosoftMailRoute
   '/services': typeof ServicesRoute
   '/site-lock': typeof SiteLockRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/ssl-certificate': typeof SslCertificateRoute
+  '/vps-hosting': typeof VpsHostingRoute
   '/website-backup': typeof WebsiteBackupRoute
+  '/windows-hosting': typeof WindowsHostingRoute
   '/windows-reseller-hosting': typeof WindowsResellerHostingRoute
+  '/wordpress-hosting': typeof WordpressHostingRoute
   '/zoho-mail': typeof ZohoMailRoute
   '/_authenticated/admin': typeof AuthenticatedAdminRoute
   '/api/public/img/$': typeof ApiPublicImgSplatRoute
@@ -204,16 +258,22 @@ export interface FileRouteTypes {
     | '/auth'
     | '/cloud-hosting'
     | '/contact'
+    | '/dedicated-servers'
     | '/digital-marketing'
     | '/hosting'
+    | '/linux-hosting'
     | '/linux-reseller-hosting'
+    | '/managed-servers'
     | '/microsoft-mail'
     | '/services'
     | '/site-lock'
     | '/sitemap.xml'
     | '/ssl-certificate'
+    | '/vps-hosting'
     | '/website-backup'
+    | '/windows-hosting'
     | '/windows-reseller-hosting'
+    | '/wordpress-hosting'
     | '/zoho-mail'
     | '/admin'
     | '/api/public/img/$'
@@ -225,16 +285,22 @@ export interface FileRouteTypes {
     | '/auth'
     | '/cloud-hosting'
     | '/contact'
+    | '/dedicated-servers'
     | '/digital-marketing'
     | '/hosting'
+    | '/linux-hosting'
     | '/linux-reseller-hosting'
+    | '/managed-servers'
     | '/microsoft-mail'
     | '/services'
     | '/site-lock'
     | '/sitemap.xml'
     | '/ssl-certificate'
+    | '/vps-hosting'
     | '/website-backup'
+    | '/windows-hosting'
     | '/windows-reseller-hosting'
+    | '/wordpress-hosting'
     | '/zoho-mail'
     | '/admin'
     | '/api/public/img/$'
@@ -247,16 +313,22 @@ export interface FileRouteTypes {
     | '/auth'
     | '/cloud-hosting'
     | '/contact'
+    | '/dedicated-servers'
     | '/digital-marketing'
     | '/hosting'
+    | '/linux-hosting'
     | '/linux-reseller-hosting'
+    | '/managed-servers'
     | '/microsoft-mail'
     | '/services'
     | '/site-lock'
     | '/sitemap.xml'
     | '/ssl-certificate'
+    | '/vps-hosting'
     | '/website-backup'
+    | '/windows-hosting'
     | '/windows-reseller-hosting'
+    | '/wordpress-hosting'
     | '/zoho-mail'
     | '/_authenticated/admin'
     | '/api/public/img/$'
@@ -270,16 +342,22 @@ export interface RootRouteChildren {
   AuthRoute: typeof AuthRoute
   CloudHostingRoute: typeof CloudHostingRoute
   ContactRoute: typeof ContactRoute
+  DedicatedServersRoute: typeof DedicatedServersRoute
   DigitalMarketingRoute: typeof DigitalMarketingRoute
   HostingRoute: typeof HostingRoute
+  LinuxHostingRoute: typeof LinuxHostingRoute
   LinuxResellerHostingRoute: typeof LinuxResellerHostingRoute
+  ManagedServersRoute: typeof ManagedServersRoute
   MicrosoftMailRoute: typeof MicrosoftMailRoute
   ServicesRoute: typeof ServicesRoute
   SiteLockRoute: typeof SiteLockRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   SslCertificateRoute: typeof SslCertificateRoute
+  VpsHostingRoute: typeof VpsHostingRoute
   WebsiteBackupRoute: typeof WebsiteBackupRoute
+  WindowsHostingRoute: typeof WindowsHostingRoute
   WindowsResellerHostingRoute: typeof WindowsResellerHostingRoute
+  WordpressHostingRoute: typeof WordpressHostingRoute
   ZohoMailRoute: typeof ZohoMailRoute
   ApiPublicImgSplatRoute: typeof ApiPublicImgSplatRoute
 }
@@ -335,6 +413,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ContactRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/dedicated-servers': {
+      id: '/dedicated-servers'
+      path: '/dedicated-servers'
+      fullPath: '/dedicated-servers'
+      preLoaderRoute: typeof DedicatedServersRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/digital-marketing': {
       id: '/digital-marketing'
       path: '/digital-marketing'
@@ -349,11 +434,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof HostingRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/linux-hosting': {
+      id: '/linux-hosting'
+      path: '/linux-hosting'
+      fullPath: '/linux-hosting'
+      preLoaderRoute: typeof LinuxHostingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/linux-reseller-hosting': {
       id: '/linux-reseller-hosting'
       path: '/linux-reseller-hosting'
       fullPath: '/linux-reseller-hosting'
       preLoaderRoute: typeof LinuxResellerHostingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/managed-servers': {
+      id: '/managed-servers'
+      path: '/managed-servers'
+      fullPath: '/managed-servers'
+      preLoaderRoute: typeof ManagedServersRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/microsoft-mail': {
@@ -391,6 +490,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SslCertificateRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/vps-hosting': {
+      id: '/vps-hosting'
+      path: '/vps-hosting'
+      fullPath: '/vps-hosting'
+      preLoaderRoute: typeof VpsHostingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/website-backup': {
       id: '/website-backup'
       path: '/website-backup'
@@ -398,11 +504,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof WebsiteBackupRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/windows-hosting': {
+      id: '/windows-hosting'
+      path: '/windows-hosting'
+      fullPath: '/windows-hosting'
+      preLoaderRoute: typeof WindowsHostingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/windows-reseller-hosting': {
       id: '/windows-reseller-hosting'
       path: '/windows-reseller-hosting'
       fullPath: '/windows-reseller-hosting'
       preLoaderRoute: typeof WindowsResellerHostingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/wordpress-hosting': {
+      id: '/wordpress-hosting'
+      path: '/wordpress-hosting'
+      fullPath: '/wordpress-hosting'
+      preLoaderRoute: typeof WordpressHostingRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/zoho-mail': {
@@ -448,16 +568,22 @@ const rootRouteChildren: RootRouteChildren = {
   AuthRoute: AuthRoute,
   CloudHostingRoute: CloudHostingRoute,
   ContactRoute: ContactRoute,
+  DedicatedServersRoute: DedicatedServersRoute,
   DigitalMarketingRoute: DigitalMarketingRoute,
   HostingRoute: HostingRoute,
+  LinuxHostingRoute: LinuxHostingRoute,
   LinuxResellerHostingRoute: LinuxResellerHostingRoute,
+  ManagedServersRoute: ManagedServersRoute,
   MicrosoftMailRoute: MicrosoftMailRoute,
   ServicesRoute: ServicesRoute,
   SiteLockRoute: SiteLockRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   SslCertificateRoute: SslCertificateRoute,
+  VpsHostingRoute: VpsHostingRoute,
   WebsiteBackupRoute: WebsiteBackupRoute,
+  WindowsHostingRoute: WindowsHostingRoute,
   WindowsResellerHostingRoute: WindowsResellerHostingRoute,
+  WordpressHostingRoute: WordpressHostingRoute,
   ZohoMailRoute: ZohoMailRoute,
   ApiPublicImgSplatRoute: ApiPublicImgSplatRoute,
 }

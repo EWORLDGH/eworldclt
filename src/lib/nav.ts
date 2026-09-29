@@ -140,6 +140,7 @@ export const primaryNav: NavItem[] = [
         links: [
           { label: "About Eworld", to: "/about" },
           { label: "Contact us", to: "/contact" },
+          { label: "Payment methods", to: "/payment-methods" },
         ],
       },
     ],

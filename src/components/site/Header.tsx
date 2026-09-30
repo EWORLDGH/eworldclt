@@ -31,7 +31,7 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-border/60 bg-background/80 backdrop-blur-xl">
-      <div className="hidden border-b border-border/40 lg:block">
+      <div className="hidden border-b border-border/40 xl:block">
         <div className="mx-auto flex max-w-7xl items-center justify-end gap-1 px-5 py-1.5">
           {accountLinks.map((a) => {
             const Icon = accountIcon[a.icon];
@@ -64,7 +64,7 @@ export function Header() {
           </span>
         </Link>
 
-        <nav className="hidden items-center gap-0.5 lg:flex">
+        <nav className="hidden items-center gap-0.5 xl:flex">
           {primaryNav.map((item) =>
             item.groups ? (
               <div key={item.label} className="group relative">
@@ -76,8 +76,10 @@ export function Header() {
                   <ChevronDown className="size-3.5 transition-transform group-hover:rotate-180" />
                 </button>
                 <div
-                  className={`invisible absolute right-0 top-full z-50 opacity-0 transition-all group-hover:visible group-hover:opacity-100 ${
-                    item.groups.length > 1 ? "w-[46rem]" : "w-64"
+                  className={`invisible absolute top-full z-50 opacity-0 transition-all group-hover:visible group-hover:opacity-100 ${
+                    item.groups.length > 1
+                      ? "left-1/2 w-[min(46rem,calc(100vw-2rem))] -translate-x-1/2"
+                      : "right-0 w-64"
                   }`}
                 >
                   <div
@@ -119,14 +121,14 @@ export function Header() {
         <div className="flex items-center gap-2">
           <a
             href={telHref(site.mobile)}
-            className="hidden items-center gap-2 rounded-full bg-gradient-brand px-4 py-2 text-sm font-medium text-primary-foreground shadow-glow transition-transform hover:scale-[1.03] xl:inline-flex"
+            className="hidden items-center gap-2 rounded-full bg-gradient-brand px-4 py-2 text-sm font-medium text-primary-foreground shadow-glow transition-transform hover:scale-[1.03] 2xl:inline-flex"
           >
             <Phone className="size-4" /> {site.mobile}
           </a>
           <button
             aria-label="Toggle menu"
             onClick={() => setOpen((v) => !v)}
-            className="grid size-10 place-items-center rounded-md border border-border lg:hidden"
+            className="grid size-10 place-items-center rounded-md border border-border xl:hidden"
           >
             {open ? <X className="size-5" /> : <Menu className="size-5" />}
           </button>
@@ -134,7 +136,7 @@ export function Header() {
       </div>
 
       {open && (
-        <nav className="max-h-[75vh] overflow-y-auto border-t border-border/60 bg-background px-5 pb-6 lg:hidden">
+        <nav className="max-h-[75vh] overflow-y-auto border-t border-border/60 bg-background px-5 pb-6 xl:hidden">
           <div className="flex flex-wrap gap-2 py-3">
             {accountLinks.map((a) => {
               const Icon = accountIcon[a.icon];

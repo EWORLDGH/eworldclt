@@ -1,7 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { useState } from "react";
 import { Menu, X, Phone, ChevronDown, User, Users, UserPlus, ExternalLink } from "lucide-react";
-import logoAsset from "@/assets/eworld-cloud-logo-transparent.png.asset.json";
 import { telHref } from "@/lib/site";
 import { useSite } from "@/lib/content";
 import { primaryNav, accountLinks, type NavLink } from "@/lib/nav";
@@ -55,7 +54,8 @@ export function Header() {
         <Link to="/" className="flex items-center gap-2" aria-label="Eworld Information Systems — home">
           <span className="inline-block transition-transform hover:scale-[1.03]">
             <img
-              src={logoAsset.url}
+              src="/images/eworld-cloud-logo-transparent.png"
+
               alt="Eworld logo"
               width={230}
               height={70}

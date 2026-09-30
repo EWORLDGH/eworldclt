@@ -148,6 +148,127 @@ function Contact() {
             </form>
           </div>
         </section>
+        <section className="mx-auto max-w-6xl px-5 pb-16">
+          <h2 className="font-display text-2xl font-semibold tracking-tight sm:text-3xl">
+            Our Associates
+          </h2>
+          <p className="mt-2 max-w-2xl text-sm text-muted-foreground">
+            Besides our Calicut office, Eworld works with trusted associates across the Gulf, USA
+            and New Zealand — same team standards, closer to you.
+          </p>
+          <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="rounded-2xl border border-border/60 bg-card p-6">
+              <span className="inline-block rounded-full bg-accent px-3 py-1 text-xs font-semibold uppercase tracking-wide text-accent-foreground">
+                UAE
+              </span>
+              <h3 className="mt-3 font-display text-lg font-semibold">Eworld LLC</h3>
+              <p className="mt-1 text-sm text-muted-foreground">
+                Sharjah Media City, Sharjah – 515000, U.A.E
+              </p>
+              <ul className="mt-3 space-y-1.5 text-sm text-muted-foreground">
+                <li className="flex gap-2">
+                  <Mail className="mt-0.5 size-4 shrink-0 text-primary" />
+                  <a href="mailto:mail@e-world.ae" className="hover:text-foreground">
+                    mail@e-world.ae
+                  </a>
+                </li>
+                <li className="flex gap-2">
+                  <MessageCircle className="mt-0.5 size-4 shrink-0 text-primary" />
+                  <a href={telHref("+971565661359")} className="hover:text-foreground">
+                    +971 56 566 1359
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            <div className="rounded-2xl border border-border/60 bg-card p-6">
+              <span className="inline-block rounded-full bg-accent px-3 py-1 text-xs font-semibold uppercase tracking-wide text-accent-foreground">
+                UAE
+              </span>
+              <h3 className="mt-3 font-display text-lg font-semibold">
+                Stars Net Information Technology
+              </h3>
+              <p className="mt-1 text-sm text-muted-foreground">
+                Office No: 19, Hamash A Building, Al Karama, Dubai, UAE
+              </p>
+              <ul className="mt-3 space-y-1.5 text-sm text-muted-foreground">
+                <li className="flex gap-2">
+                  <Phone className="mt-0.5 size-4 shrink-0 text-primary" />
+                  <a href={telHref("+971554108100")} className="hover:text-foreground">
+                    +971 55 410 8100
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            <div className="rounded-2xl border border-border/60 bg-card p-6">
+              <span className="inline-block rounded-full bg-accent px-3 py-1 text-xs font-semibold uppercase tracking-wide text-accent-foreground">
+                USA
+              </span>
+              <h3 className="mt-3 font-display text-lg font-semibold">Cybermox</h3>
+              <p className="mt-1 text-sm text-muted-foreground">
+                2160 Turnberry Way, Woodstock, Maryland, 21163
+              </p>
+              <ul className="mt-3 space-y-1.5 text-sm text-muted-foreground">
+                <li className="flex gap-2">
+                  <Phone className="mt-0.5 size-4 shrink-0 text-primary" />
+                  <a href={telHref("+14433648478")} className="hover:text-foreground">
+                    443-364-8478
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            <div className="rounded-2xl border border-border/60 bg-card p-6">
+              <span className="inline-block rounded-full bg-accent px-3 py-1 text-xs font-semibold uppercase tracking-wide text-accent-foreground">
+                New Zealand
+              </span>
+              <h3 className="mt-3 font-display text-lg font-semibold">
+                Aiwin Media – United Web Solution
+              </h3>
+              <p className="mt-1 text-sm text-muted-foreground">
+                40, Ohaupo Road, Melville, Hamilton 3206, Waikto, New Zealand
+              </p>
+              <ul className="mt-3 space-y-1.5 text-sm text-muted-foreground">
+                <li className="flex gap-2">
+                  <Phone className="mt-0.5 size-4 shrink-0 text-primary" />
+                  <a href={telHref("+642040415102")} className="hover:text-foreground">
+                    +64 20 4041 5102
+                  </a>
+                </li>
+                <li className="flex gap-2">
+                  <MessageCircle className="mt-0.5 size-4 shrink-0 text-primary" />
+                  <a
+                    href="https://wa.me/64225005028"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-foreground"
+                  >
+                    +64 22 500 5028
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            <div className="rounded-2xl border border-border/60 bg-card p-6">
+              <span className="inline-block rounded-full bg-accent px-3 py-1 text-xs font-semibold uppercase tracking-wide text-accent-foreground">
+                Qatar
+              </span>
+              <h3 className="mt-3 font-display text-lg font-semibold">Cybermox</h3>
+              <p className="mt-1 text-sm text-muted-foreground">
+                Tuffail Street, Zone 45, PO Box# 30709, Doha, Qatar
+              </p>
+              <ul className="mt-3 space-y-1.5 text-sm text-muted-foreground">
+                <li className="flex gap-2">
+                  <Phone className="mt-0.5 size-4 shrink-0 text-primary" />
+                  <a href={telHref("+97431149966")} className="hover:text-foreground">
+                    +974 31149966
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
         <RelatedLinks current="/contact" />
       </main>
       <Footer />

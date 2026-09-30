@@ -4,7 +4,6 @@ import { Footer } from "@/components/site/Footer";
 import { PageHero, CtaBand, RelatedLinks } from "@/components/site/Section";
 import { PaypalButton } from "@/components/site/PaypalButton";
 import { Check, Mail, MapPin, Smartphone } from "lucide-react";
-import gpayQr from "@/assets/gpay-qr.png.asset.json";
 
 const title = "Payment Methods — Bank Transfer, UPI, PayPal & Cards | Eworld";
 const description =
@@ -154,7 +153,7 @@ function PaymentMethods() {
               </p>
               <p className="font-display text-base font-semibold">Scan and Pay</p>
               <img
-                src={gpayQr.url}
+                src="/images/gpay-qr.png"
                 alt="Eworld Google Pay QR code — scan and pay to 94 954 90975"
                 width={295}
                 height={442}

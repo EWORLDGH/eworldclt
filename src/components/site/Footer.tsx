@@ -13,7 +13,8 @@ export function Footer() {
         <div>
           <span className="inline-block rounded-md bg-brand-plate px-2.5 py-2">
             <img
-              src={logoAsset.url}
+              src="/images/eworld-cloud-logo-transparent.png"
+
               alt="Eworld logo"
               loading="lazy"
               width={230}

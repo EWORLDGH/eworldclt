@@ -54,7 +54,8 @@ export function Header() {
         <Link to="/" className="flex items-center gap-2" aria-label="Eworld Information Systems — home">
           <span className="inline-block transition-transform hover:scale-[1.03]">
             <img
-              src={logoAsset.url}
+              src="/images/eworld-cloud-logo-transparent.png"
+
               alt="Eworld logo"
               width={230}
               height={70}

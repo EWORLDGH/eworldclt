@@ -170,7 +170,7 @@ function PaymentMethods() {
           <div className="mx-auto max-w-7xl px-5 py-14">
             <h2 className="font-display text-2xl font-bold">Pay online now</h2>
             <p className="mt-2 max-w-2xl text-sm text-muted-foreground">
-              Prefer to settle a invoice online in one click? Use our secure Cashfree checkout in
+              Prefer to settle an invoice online in one click? Use our secure Cashfree checkout in
               your currency, or pay directly with PayPal below.
             </p>
 
